@@ -1,3 +1,3 @@
-## Get in the Game Patter Library
+## Get in the Game Pattern Library
 
 Coming soon.
