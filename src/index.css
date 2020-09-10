@@ -146,3 +146,19 @@ h2 {
 .card {
   background: #ffffff;
 }
+.uiNav {
+  display: flex;
+  margin: 20px 0 20px 0;
+}
+.uiNav span {
+  margin-right: 10px;
+}
+.uiNav span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.navOn {
+  color: crimson;
+  text-decoration: underline;
+  font-weight: 700;
+}
