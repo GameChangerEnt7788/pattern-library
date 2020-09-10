@@ -17,6 +17,12 @@ export const Test = (props) => {
     { param: "Amount", type: "Integer" },
     { param: "Large", type: "Boolean" },
   ];
+  const code = `<Test
+        name={"Next Gen Tech"}
+        description={"Best tech ever"}
+        amount={34}
+        large={false}
+   />`;
   return (
     <>
       <div>Test Component</div>
@@ -41,12 +47,7 @@ export const Test = (props) => {
       <div className="card" style={{ marginBottom: "30px" }}>
         <h3 style={{ textDecoration: "underline" }}>Code</h3>
         <CodeBlock
-          text={`<Test
-                      name={"Next Gen Tech"}
-                      description={"Best tech ever"}
-                      amount={34}
-                      large={false}
-                       />`}
+          text={code}
           language={"jsx"}
           showLineNumbers={false}
           wrapLines={false}

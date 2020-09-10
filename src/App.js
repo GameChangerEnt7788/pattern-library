@@ -115,20 +115,20 @@ class App extends Component {
               <div className="uiNav">
                 <span
                   className={
-                    this.state.page === "components" ? "navOn" : "navOff"
-                  }
-                  onClick={() => this.setState({ page: "components" })}
-                >
-                  Components
-                </span>
-                <span>|</span>
-                <span
-                  className={
                     this.state.page === "foundations" ? "navOn" : "navOff"
                   }
                   onClick={() => this.setState({ page: "foundations" })}
                 >
                   Foundations
+                </span>
+                <span>|</span>
+                <span
+                  className={
+                    this.state.page === "components" ? "navOn" : "navOff"
+                  }
+                  onClick={() => this.setState({ page: "components" })}
+                >
+                  Components
                 </span>
               </div>
 
@@ -169,8 +169,6 @@ class App extends Component {
               {this.state.selectedComponent}
             </div>
           </div>
-
-          <div className="footer">Footer</div>
         </div>
       </div>
     );
