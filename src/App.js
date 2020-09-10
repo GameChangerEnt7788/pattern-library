@@ -2,7 +2,34 @@ import React, { Component } from "react";
 
 import { Test } from "./pattern/componentLibrary";
 
-const componentList = [{ Test: <Test /> }];
+const componentList = [
+  {
+    type: {
+      name: "UI Elements",
+      components: [
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+      ],
+    },
+  },
+  {
+    type: {
+      name: "Forms",
+      components: [
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+        { Test: <Test /> },
+      ],
+    },
+  },
+];
 
 class App extends Component {
   state = {
@@ -28,23 +55,29 @@ class App extends Component {
             <div className="margin-left">
               {/* /////// LEFT CONTENT \\\\\\\ */}
               <h1>Components</h1>
-              <h2>Cards</h2>
-              <ul className="pattern-list">
-                {componentList.map((val, i) => {
-                  return (
-                    <li
-                      onClick={() =>
-                        this.setState({
-                          selectedComponent: Object.values(val)[0],
-                        })
-                      }
-                    >
-                      {console.log(Object.values(val)[0])}
-                      {Object.keys(val)[0]}
-                    </li>
-                  );
-                })}
-              </ul>
+              {componentList.map((ui, i) => {
+                return (
+                  <>
+                    <h2>{ui.type.name}</h2>
+                    <ul className="pattern-list">
+                      {ui.type.components.map((component, i) => {
+                        return (
+                          <li
+                            onClick={() =>
+                              this.setState({
+                                selectedComponent: Object.values(component)[0],
+                              })
+                            }
+                          >
+                            {console.log(Object.values(component)[0])}
+                            {Object.keys(component)[0]}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </>
+                );
+              })}
             </div>
             <div className="column-maincontent">
               {/* /////// CENTER COLUMN \\\\\\\ */}
