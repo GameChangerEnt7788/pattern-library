@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+.submitButton,
+.postButton {
+  -moz-transition: 0.1s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  -ms-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}

@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+html {
+  background-image: url("/images/carbg.png");
+  background-repeat: repeat;
+}
+.car-background {
+  background-image: linear-gradient(
+    180deg,
+    #ffffff69,
+    #f0f0f0d7
+  ); /* ,
+    url("/images/carbg.png");
+  background-repeat: repeat; */
+}
+html,
+body,
+input,
+select,
+textarea {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.pageHolder,
+.pageHolderInside,
+.pageHolderHero,
+.heroHolder,
+.heroPage,
+.heroContentHeader,
+.heroContent,
+.card,
+.graycard,
+.footerContainer,
+input,
+select,
+.navContainer,
+.navContainer,
+.profileMenu,
+.column-three,
+.column-two,
+.navButtons,
+.badgeHolder,
+.cardHero,
+.sideNavContainer,
+.sideNavButton,
+.sideNavButtons,
+.cardbase,
+.column-maincontent,
+.upgradeTable #separator,
+textarea {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+h2 {
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+#pattern-name {
+  font-weight: 900;
+}
+#pattern-parameter {
+  color: blue;
+  font-style: italic;
+}
+
+.column-two {
+  display: grid;
+  grid-template-columns: 300px auto;
+  height: 100%;
+}
+.pattern-link {
+  text-decoration: underline;
+  color: rgb(180, 129, 19);
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 2;
+}
+
+.pattern-link:hover {
+  text-decoration: underline;
+  color: rgb(66, 46, 2);
+}
+
+/* ///// */
+
+.pageHolderInside {
+  position: absolute;
+  width: 100%;
+  margin-top: 0px;
+  height: 100%;
+}
+
+.margin-right,
+.margin-left {
+  background-color: #ffffff;
+  height: 100%;
+}
+.margin-right {
+  box-shadow: -1px 0px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+.margin-left {
+  box-shadow: 1px 0px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.pattern-list li {
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 2;
+}
+
+.pattern-list li:hover {
+  text-decoration: underline;
+  color: rgb(180, 129, 19);
+}
+
+.column-maincontent {
+  padding: 20px;
+}
+.column-maincontent-nopadding {
+  padding: 0 20px 20px 20px;
+  max-width: 900px;
+}
+
+.card {
+  -moz-transition: 0.1s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  -ms-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.card {
+  position: relative;
+
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 13px;
+  padding: 20px;
+  width: 100%;
+}
+.card {
+  background: #ffffff;
+}
