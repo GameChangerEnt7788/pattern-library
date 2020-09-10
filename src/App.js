@@ -33,7 +33,6 @@ const componentList = [
 
 class App extends Component {
   state = {
-    selectedPattern: "PatternPopularThread",
     selectedComponent: <Test />,
   };
   sendSearch = () => {
