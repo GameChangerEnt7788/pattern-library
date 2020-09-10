@@ -45,7 +45,7 @@ export const Test = (props) => {
                       name={"Next Gen Tech"}
                       description={"Best tech ever"}
                       amount={34}
-                      large={true}
+                      large={false}
                        />`}
           language={"jsx"}
           showLineNumbers={false}
