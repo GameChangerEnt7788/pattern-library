@@ -1,31 +1,26 @@
 import React, { Component } from "react";
 
 import { Test } from "./pattern/componentLibrary";
-import { Pallette, Panels, Titles, Controls } from "./pattern/colors";
+import { FormInput, PrimaryButton } from "./pattern/formComponents";
+import { PatternDivider } from "./pattern/elementComponents";
+import { Pallette, Panels, Titles } from "./pattern/colors";
+import { Fonts, Scale } from "./pattern/type";
+import {
+  PrimaryContent /* SecondaryTiles, SecondaryProminent,FlushGrid, Scores */,
+} from "./pattern/grid";
 const componentList = [
   {
     type: {
       name: "UI Elements",
-      components: [
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-      ],
+      components: [{ Divider: <PatternDivider /> }],
     },
   },
   {
     type: {
       name: "Forms",
       components: [
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
+        { FormInput: <FormInput /> },
+        { PrimaryButton: <PrimaryButton /> },
       ],
     },
   },
@@ -39,7 +34,6 @@ const foundationsList = [
         { Pallette: <Pallette /> },
         { Panels: <Panels /> },
         { Titles: <Titles /> },
-        { Controls: <Controls /> },
       ],
     },
   },
@@ -48,34 +42,26 @@ const foundationsList = [
     type: {
       name: "Grid system",
       components: [
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
+        { PrimaryContent: <PrimaryContent /> },
+        /*         { SecondaryTiles: <SecondaryTiles /> },
+        { SecondaryProminent: <SecondaryProminent /> },
+        { FlushGrid: <FlushGrid /> },
+        { Scores: <Scores /> }, */
       ],
     },
   },
   {
     type: {
       name: "Typography",
-      components: [
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-      ],
+      components: [{ Fonts: <Fonts /> } /* , { Scale: <Scale /> } */],
     },
   },
 ];
 
 class App extends Component {
   state = {
-    selectedComponent: <Test />,
-    page: "foundations",
+    selectedComponent: <PatternDivider />,
+    page: "components",
   };
   sendSearch = () => {
     alert("searched");
@@ -93,7 +79,10 @@ class App extends Component {
         <div></div>
         <div className="pageHolderInside">
           <div className="column-two mainPage">
-            <div className="margin-left">
+            <div
+              className="margin-left primaryBackground"
+              style={{ color: "#A9A9A9" }}
+            >
               {/* /////// LEFT CONTENT \\\\\\\ */}
               <div>
                 <img src="images/logo.png" style={{ width: "80%" }} />
@@ -126,7 +115,7 @@ class App extends Component {
                   return (
                     <>
                       {console.log(ui)}
-                      <h2>{ui.type.name}</h2>
+                      <h4 style={{ color: "#F8F8FF" }}>{ui.type.name}</h4>
                       <ul className="pattern-list">
                         {ui.type.components.map((component, i) => {
                           return (

@@ -76,7 +76,7 @@ export const Pallette = (props) => {
                       <div id="column1">
                         <div className="colorBoxContainer">
                           <div>
-                            <h2>{val.name}</h2>
+                            <h3>{val.name}</h3>
                           </div>
                           {val.gradient ? (
                             <div
@@ -263,7 +263,7 @@ export const Panels = (props) => {
                       <div id="column1">
                         <div className="colorBoxContainer">
                           <div>
-                            <h2>{val.name}</h2>
+                            <h3>{val.name}</h3>
                           </div>
 
                           <p>
@@ -322,9 +322,11 @@ export const Titles = (props) => {
           linear-gradient(180deg, #3b3b3b 0%, #000000 100%);
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5),
           inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
-        letter-spacing: 1px;
+          font-family: 'Bebas Neue', cursive;
+          font-size: 24px;
+          text-transform: uppercase;
+          color: #f8f8ff;
+          padding: 6px 8px 3px 8px;
       }`,
     },
     {
@@ -344,9 +346,11 @@ export const Titles = (props) => {
           linear-gradient(180deg, #CC9600 0%, #683300 100%);
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5),
           inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
-        letter-spacing: 1px;
+          font-family: 'Bebas Neue', cursive;
+          font-size: 24px;
+          text-transform: uppercase;
+          color: #f8f8ff;
+          padding: 6px 8px 3px 8px;
       }`,
     },
     {
@@ -363,8 +367,8 @@ export const Titles = (props) => {
             rgba(255, 255, 255, 0.08) 60%
           ),
           linear-gradient(180deg, rgba(190, 3, 75, 0.99) 2%, #000000 98%);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
+          font-family: 'Bebas Neue', cursive;
+        font-size: 22px;
         letter-spacing: 1px;
         color: #f8f8ff;
       }`,
@@ -383,8 +387,8 @@ export const Titles = (props) => {
             rgba(255, 255, 255, 0.08) 60%
           ),
           linear-gradient(180deg, #BE8703 2%, #000000 98%);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
+          font-family: 'Bebas Neue', cursive;
+        font-size: 22px;
         letter-spacing: 1px;
         color: #f8f8ff;
       }`,
@@ -403,8 +407,8 @@ export const Titles = (props) => {
             rgba(255, 255, 255, 0.08) 60%
           ),
           linear-gradient(180deg, #008C4E 2%, #000000 98%);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
+          font-family: 'Bebas Neue', cursive;
+        font-size: 22px;
         letter-spacing: 1px;
         color: #f8f8ff;
       }`,
@@ -423,8 +427,8 @@ export const Titles = (props) => {
             rgba(255, 255, 255, 0.08) 60%
           ),
           linear-gradient(180deg, #008EF9 2%, #000000 98%);
-        font-family: "Oswald", sans-serif;
-        font-size: 18px;
+          font-family: 'Bebas Neue', cursive;
+        font-size: 22px;
         letter-spacing: 1px;
         color: #f8f8ff;
       }`,
@@ -448,7 +452,7 @@ export const Titles = (props) => {
                       <div id="column1">
                         <div className="colorBoxContainer">
                           <div>
-                            <h2>{val.name}</h2>
+                            <h3>{val.name}</h3>
                           </div>
 
                           <p>
@@ -483,53 +487,6 @@ export const Titles = (props) => {
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
-};
-
-export const Controls = (props) => {
-  const patternListTable = [
-    { param: "Name", type: "String" },
-    { param: "Description", type: "String" },
-    { param: "Amount", type: "Integer" },
-    { param: "Large", type: "Boolean" },
-  ];
-  const code = `<Test
-        name={"Next Gen Tech"}
-        description={"Best tech ever"}
-        amount={34}
-        large={false}
-   />`;
-  return (
-    <>
-      <div>
-        <h1>Controls, Icons and Navigation</h1>
-      </div>
-      <div className="card" style={{ margin: "30px 0 30px 0" }}>
-        {/*    <div>
-          {patternListTable.map((val, i) => {
-            return (
-              <>
-                <div style={patternListStyle}>
-                  <span id="pattern-name">{val.param}</span>
-                  <span id="pattern-parameter">{val.type}</span>
-                </div>
-              </>
-            );
-          })}
-        </div> */}
-      </div>
-
-      <div className="card" style={{ marginBottom: "30px" }}>
-        <h3 style={{ textDecoration: "underline" }}>Code</h3>
-        <CodeBlock
-          text={code}
-          language={"jsx"}
-          showLineNumbers={false}
-          wrapLines={false}
-          theme={vs2015}
-        />
       </div>
     </>
   );
