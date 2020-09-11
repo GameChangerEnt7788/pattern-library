@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 html {
   background-image: url("/images/carbg.png");
   background-repeat: repeat;
@@ -56,9 +56,10 @@ textarea {
   box-sizing: border-box; /* Opera/IE 8+ */
 }
 h2 {
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 900;
-  margin-bottom: 18px;
+  margin: 0;
+  margin-bottom: 5px;
 }
 #pattern-name {
   font-weight: 900;
@@ -161,4 +162,163 @@ h2 {
   color: crimson;
   text-decoration: underline;
   font-weight: 700;
+}
+.colorGrid,
+.colorGrid-panel {
+  display: grid;
+
+  grid-gap: 20px;
+  grid-row-gap: 40px;
+}
+.colorGrid {
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+}
+.colorGrid-panel {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+.colorBox {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.dark {
+  border: 1px solid #c0c0c0;
+  color: white;
+  padding: 10px;
+}
+.light {
+  background: #241c15;
+  padding: 10px;
+
+  border: 1px solid #c0c0c0;
+}
+.colorBoxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-right: 10px;
+  color: #241c15;
+  text-align: right;
+}
+
+.primaryBackground {
+  background-color: #000000;
+  background-image: url("/images/bgTile.png"),
+    linear-gradient(270deg, #000000 0%, #444444 51%, #000000 100%);
+  background-repeat: repeat;
+  background-size: 40px, cover, cover;
+  background-position: top left, center center, center center;
+}
+
+.heroBackground {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("/images/heroBack.jpg") no-repeat center center;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.blackOverlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.raisedCard {
+  background-color: #4e4e4e;
+  background-image: url("/images/bgTile.png"),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.67) 0%,
+      rgba(136, 136, 136, 0.28) 100%
+    );
+  background-repeat: repeat;
+  background-size: 40px, cover, cover;
+  background-position: top left, center center, center center;
+}
+
+.solidWhitePanel {
+  background: #f8f8ff;
+}
+
+.titleBar {
+  background-color: #4e4e4e;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(0, 0, 0, 0.03) 43%
+    ),
+    linear-gradient(180deg, #3b3b3b 0%, #000000 100%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.titleBar-highlight {
+  background-color: #4e4e4e;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(0, 0, 0, 0.03) 43%
+    ),
+    linear-gradient(180deg, #cc9600 0%, #683300 100%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.title-watch {
+  background-image: linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.07) 60%,
+      rgba(255, 255, 255, 0.08) 60%
+    ),
+    linear-gradient(180deg, rgba(190, 3, 75, 0.99) 2%, #000000 98%);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #f8f8ff;
+}
+.title-scores {
+  background-image: linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.07) 60%,
+      rgba(255, 255, 255, 0.08) 60%
+    ),
+    linear-gradient(180deg, #be8703 2%, #000000 98%);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #f8f8ff;
+}
+.title-immersive {
+  background-image: linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.07) 60%,
+      rgba(255, 255, 255, 0.08) 60%
+    ),
+    linear-gradient(180deg, #008c4e 2%, #000000 98%);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #f8f8ff;
+}
+.title-nextgen {
+  background-image: linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.07) 60%,
+      rgba(255, 255, 255, 0.08) 60%
+    ),
+    linear-gradient(180deg, #008ef9 2%, #000000 98%);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #f8f8ff;
 }

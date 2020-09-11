@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Test } from "./pattern/componentLibrary";
-
+import { Pallette, Panels, Titles, Controls } from "./pattern/colors";
 const componentList = [
   {
     type: {
@@ -34,30 +34,16 @@ const componentList = [
 const foundationsList = [
   {
     type: {
-      name: "Color",
+      name: "UI Colors",
       components: [
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
+        { Pallette: <Pallette /> },
+        { Panels: <Panels /> },
+        { Titles: <Titles /> },
+        { Controls: <Controls /> },
       ],
     },
   },
-  {
-    type: {
-      name: "Data Visualization",
-      components: [
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-        { Test: <Test /> },
-      ],
-    },
-  },
+
   {
     type: {
       name: "Grid system",
@@ -89,7 +75,7 @@ const foundationsList = [
 class App extends Component {
   state = {
     selectedComponent: <Test />,
-    page: "components",
+    page: "foundations",
   };
   sendSearch = () => {
     alert("searched");
