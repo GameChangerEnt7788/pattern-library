@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import gsap from "gsap";
 export const Button = (props) => {
   return (
     <div
@@ -224,3 +224,102 @@ export const ChevronBackButton = (props) => {
   );
 };
  */
+
+export const Switch = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [off, buttonSwitch] = useState(props.on ? false : true);
+
+  const offGradient = `radial-gradient(
+  circle at bottom center,
+  #98df98 0%,
+  #3c741d 100%
+)`;
+  const onGradient = `radial-gradient(
+  circle at bottom center,
+  #e2e2e2 0%,
+#747474 100%
+)`;
+  const buttonOnCSS = { marginLeft: "50%" };
+  const buttonOffCSS = { marginLeft: "7%" };
+
+  const buttonBackOnCSS = { backgroundImage: onGradient };
+  const buttonBackOffCSS = { backgroundImage: offGradient };
+
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+  console.log(off);
+  const onSubmit = () => {
+    props.onClick && props.onClick();
+
+    document
+      .getElementById("switchButton")
+      .setAttribute("marginLeft", off ? "7%" : "50%");
+    document
+      .getElementById("switchButtonBack")
+      .setAttribute("backgroundImage", off ? offGradient : onGradient);
+
+    buttonSwitch(!off);
+  };
+
+  return (
+    <div style={{}}>
+      <div className="switch-button-container">
+        <div
+          className="switch-button-back"
+          id="switchButtonBack"
+          onClick={() => onSubmit()}
+          style={off ? buttonBackOnCSS : buttonBackOffCSS}
+        >
+          <div
+            className="switch-button"
+            id="switchButton"
+            style={off ? buttonOffCSS : buttonOnCSS}
+          />
+        </div>
+        <div style={{ height: props.gap }} />
+      </div>
+    </div>
+  );
+};
+
+export const RadioButton = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [off, buttonSwitch] = useState(props.on ? false : true);
+
+  const buttonOnCSS = { opacity: 1 };
+  const buttonOffCSS = { opacity: 0 };
+
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+  console.log(off);
+  const onSubmit = () => {
+    props.onClick && props.onClick();
+
+    document.getElementById("radioButton").setAttribute("opacity", off ? 0 : 1);
+
+    buttonSwitch(!off);
+  };
+
+  return (
+    <div style={{}}>
+      <div className="radio-button-container">
+        <div
+          className="radio-button-back"
+          id="radioButtonBack"
+          onClick={() => onSubmit()}
+        >
+          <div
+            className="radio-button"
+            id="radioButton"
+            style={off ? buttonOffCSS : buttonOnCSS}
+          />
+        </div>
+        <div style={{ height: props.gap }} />
+      </div>
+    </div>
+  );
+};

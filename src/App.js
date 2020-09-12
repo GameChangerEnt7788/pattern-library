@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 
 import { Test } from "./pattern/componentLibrary";
-import { FormInput, PrimaryButton } from "./pattern/formComponents";
-import { PatternDivider } from "./pattern/elementComponents";
+import {
+  FormInput,
+  PrimaryButton,
+  PatternSwitch,
+  PatternRadioButton,
+} from "./pattern/formComponents";
+import {
+  PatternDivider,
+  PatternScorePanel,
+  PatternCollapsible,
+} from "./pattern/elementComponents";
 import { Pallette, Panels, Titles } from "./pattern/colors";
 import { Fonts, Scale } from "./pattern/type";
 import {
@@ -12,7 +21,11 @@ const componentList = [
   {
     type: {
       name: "UI Elements",
-      components: [{ Divider: <PatternDivider /> }],
+      components: [
+        { Divider: <PatternDivider /> },
+        { ScorePanel: <PatternScorePanel /> },
+        { Collapsible: <PatternCollapsible /> },
+      ],
     },
   },
   {
@@ -21,6 +34,8 @@ const componentList = [
       components: [
         { FormInput: <FormInput /> },
         { PrimaryButton: <PrimaryButton /> },
+        { Switch: <PatternSwitch /> },
+        { RadioButton: <PatternRadioButton /> },
       ],
     },
   },
@@ -60,7 +75,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternDivider />,
+    selectedComponent: <PatternRadioButton />,
     page: "components",
   };
   sendSearch = () => {

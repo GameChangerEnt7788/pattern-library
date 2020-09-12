@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="626px" height="162px" viewBox="0 0 626 162" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3B3B3B" offset="0%"></stop>
+            <stop stop-color="#181818" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="626" height="162" rx="11"></rect>
+        <pattern id="pattern-3" width="20.0284768" height="20.0284768" x="-20.0284768" y="-20.0284768" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-4" transform="scale(0.208629967,0.208629967)"></use>
+        </pattern>
+        <image id="image-4" width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGN5fIAKQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAYKADAAQAAAABAAAAYAAAAACK+310AAABVklEQVR4Ae3cOQ7EIADFUJL73znLCaAzEm/qSAY7v5gmY/gxwAADDDDAAAMMMMDAaQauhQs/C8+Uj8zusPX579Ic9hgCxG+BAALEBmK8BQgQG4jxFiBAbCDGW4AAsYEYbwECxAZivAUIEBuI8RYgQGwgxluAALGBGG8BAsQGYrwFCBAbiPEWIEBsIMZbgACxgRhvAQLEBmK8BQgQG4jxFiBAbCDGW4AAsYEYbwECxAZivAUIEBuI8RYQB4BngAEGGGCAAQYYYICB8wzMvrXzG9n6ezvf+WZ32Pr8/gnHoxNAgNhAjLcAAWIDMd4CBIgNxHgLECA2EOMtQIDYQIy3AAFiAzHeAgSIDcR4CxAgNhDjLUCA2ECMtwABYgMx3gIEiA3EeAsQIDYQ4y1AgNhAjLcAAWIDMd4CBIgNxHgLECA2EOMtQIDYQIy3AAFiAzHeAgSIDcT4F+yBBJ30x9sFAAAAAElFTkSuQmCC"></image>
+        <filter x="-1.1%" y="-4.3%" width="102.2%" height="108.6%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="3" dy="4" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.716045673 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="81.8022944%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0.295673077" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rewards" transform="translate(-60.000000, -232.000000)">
+            <g id="Group-3" transform="translate(60.000000, 232.000000)">
+                <g id="Rectangle">
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <use fill-opacity="0.35" fill="url(#pattern-3)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-2"></use>
+                    <rect stroke="#979797" stroke-width="1" stroke-linejoin="square" x="0.5" y="0.5" width="625" height="161" rx="11"></rect>
+                </g>
+                <rect id="Rectangle-Copy-3" fill="url(#linearGradient-6)" x="11" y="11" width="604" height="94" rx="11"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
