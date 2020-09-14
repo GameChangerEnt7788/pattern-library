@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 
-import { Test } from "./pattern/componentLibrary";
 import {
   FormInput,
   PrimaryButton,
   PatternSwitch,
   PatternRadioButton,
+  PatternSecondaryButton,
+  PatternTextButton,
+  PatternDeleteCrumb,
 } from "./pattern/formComponents";
 import {
   PatternDivider,
   PatternScorePanel,
   PatternCollapsible,
+  PatternNavBar,
 } from "./pattern/elementComponents";
 import { Pallette, Panels, Titles } from "./pattern/colors";
 import { Fonts, Scale } from "./pattern/type";
@@ -25,6 +28,7 @@ const componentList = [
         { Divider: <PatternDivider /> },
         { ScorePanel: <PatternScorePanel /> },
         { Collapsible: <PatternCollapsible /> },
+        { NavButtons: <PatternNavBar /> },
       ],
     },
   },
@@ -34,8 +38,12 @@ const componentList = [
       components: [
         { FormInput: <FormInput /> },
         { PrimaryButton: <PrimaryButton /> },
+        { TextButton: <PatternTextButton /> },
+
+        { SecondaryButton: <PatternSecondaryButton /> },
         { Switch: <PatternSwitch /> },
         { RadioButton: <PatternRadioButton /> },
+        { DeleteCrumb: <PatternDeleteCrumb /> },
       ],
     },
   },
@@ -57,7 +65,7 @@ const foundationsList = [
     type: {
       name: "Grid system",
       components: [
-        { PrimaryContent: <PrimaryContent /> },
+        { PrimaryContent: <PatternScorePanel /> },
         /*         { SecondaryTiles: <SecondaryTiles /> },
         { SecondaryProminent: <SecondaryProminent /> },
         { FlushGrid: <FlushGrid /> },
@@ -75,7 +83,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternRadioButton />,
+    selectedComponent: <PatternNavBar />,
     page: "components",
   };
   sendSearch = () => {

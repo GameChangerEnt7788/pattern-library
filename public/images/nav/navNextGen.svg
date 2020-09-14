@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="103px" height="72px" viewBox="0 0 103 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <defs>
+        <linearGradient x1="50%" y1="0.155722128%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#C0C0C0" stop-opacity="0.938046329" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.381938374" offset="100%"></stop>
+        </linearGradient>
+        <path d="M511.88035,41.8793871 C498.408055,18.9466161 478.113068,34.901219 478.113068,34.901219 C476.796842,35.9318832 474.369813,36.7792744 472.720726,36.7832158 L467.284637,36.7871571 C465.63555,36.7891278 463.208521,35.9417366 461.894197,34.9110724 C461.894197,34.9110724 441.597308,18.9525282 428.12311,41.8852991 C414.652717,64.8101874 420.081198,89.7766972 420.081198,89.7766972 C421.032228,95.889738 424.166824,99.9690399 430.082233,99.4566638 C435.980523,98.9462584 448.783293,82.9936262 448.783293,82.9936262 C449.840839,81.6791845 452.056739,80.6051654 453.702022,80.6051654 L486.291929,80.5992533 C487.939113,80.5992533 490.153112,81.6732724 491.208755,82.9877141 C491.208755,82.9877141 504.013428,98.9403463 509.921228,99.4507517 C515.829028,99.9631278 518.971232,95.8798846 519.916557,89.7707852 C519.914655,89.7707852 525.352646,64.8082167 511.88035,41.8793871 Z M457.899139,59.5337386 L450.863414,59.5337386 L450.863414,66.3800053 C450.863414,66.3800053 449.373541,67.5284612 447.067876,67.4994598 C444.766041,67.4646581 443.724279,66.2465988 443.724279,66.2465988 L443.724279,59.535672 L437.079214,59.535672 C437.079214,59.535672 436.250017,58.6772302 436.027877,56.4170534 C435.809566,54.1568767 436.945164,52.3297877 436.945164,52.3297877 L443.982804,52.3297877 L443.982804,45.2263751 C443.982804,45.2263751 445.430547,44.443337 447.512157,44.5032732 C449.595681,44.5690098 451.12194,45.3597816 451.12194,45.3597816 L451.093215,52.3278543 L457.738279,52.3278543 C457.738279,52.3278543 458.898772,53.8320609 458.994522,55.6494827 C459.090272,57.468838 457.899139,59.5337386 457.899139,59.5337386 Z M488.99742,67.5 C486.230439,67.5 484,65.2630674 484,62.5 C484,59.7317744 486.230439,57.5 488.99742,57.5 C491.752365,57.5 494,59.7317744 494,62.5 C494,65.2647868 491.752365,67.5 488.99742,67.5 Z M488.99742,52.5 C486.230439,52.5 484,50.2644024 484,47.5008598 C484,44.7321582 486.230439,42.5 488.99742,42.5 C491.752365,42.5 494,44.7321582 494,47.5008598 C494,50.2661221 491.752365,52.5 488.99742,52.5 Z M502.99742,60.5 C500.230439,60.5 498,58.2647868 498,55.5 C498,52.7334938 500.230439,50.5 502.99742,50.5 C505.752365,50.5 508,52.7334938 508,55.5 C508,58.2647868 505.752365,60.5 502.99742,60.5 Z" id="path-2"></path>
+        <filter x="-0.5%" y="-0.7%" width="102.0%" height="102.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.672230114 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <pattern id="pattern-4" width="512" height="512" x="-93" y="-482.5" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-5"></use>
+        </pattern>
+
+        <filter x="-1.5%" y="-2.1%" width="103.9%" height="105.7%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="2" dy="2" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BottomNav-Copy-2" transform="translate(-419.000000, -29.000000)" fill-rule="nonzero">
+            <g id="Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <use fill-opacity="0.12" fill="url(#pattern-4)" xlink:href="#path-2"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

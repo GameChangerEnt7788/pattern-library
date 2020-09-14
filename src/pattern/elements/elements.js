@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+import { NavButton } from "../forms/Button";
 import gsap from "gsap";
 export const Divider = (props) => {
   return (
@@ -163,6 +165,74 @@ export const CollapsibleText = (props) => {
           {props.content}
         </div>
       </div>
+      <div style={{ height: props.gap }}></div>
+    </div>
+  );
+};
+
+export const NavBar = (props) => {
+  const [open, setOpen] = useState(props.open);
+
+  const disableButton = () => {
+    //buttonDisable(false);
+  };
+
+  return (
+    <div style={{}}>
+      <div
+        className="navBar"
+        style={{
+          display: "flex",
+        }}
+      >
+        <div className="navContainerL">
+          <NavButton
+            button="NavButtonHome"
+            on={false}
+            onClick={() => console.log("clicked")}
+            size={50}
+          />
+        </div>
+        <div className="navContainer">
+          <NavButton
+            button="NavButtonPlay"
+            on={true}
+            onClick={() => console.log("clicked")}
+            size={50}
+          />
+        </div>
+        <div className="navContainer">
+          <NavButton
+            button="NavButtonImmerse"
+            on={false}
+            onClick={() => console.log("clicked")}
+          />
+        </div>
+        <div className="navContainer">
+          <NavButton
+            button="NavButtonNextGen"
+            on={false}
+            onClick={() => console.log("clicked")}
+          />
+        </div>
+        <div className="navContainer">
+          <NavButton
+            button="NavButtonScores"
+            on={false}
+            onClick={() => console.log("clicked")}
+            size={60}
+          />
+        </div>
+        <div className="navContainerR">
+          <NavButton
+            button="NavButtonRewards"
+            on={false}
+            onClick={() => console.log("clicked")}
+            size={50}
+          />
+        </div>
+      </div>
+
       <div style={{ height: props.gap }}></div>
     </div>
   );

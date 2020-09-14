@@ -1,7 +1,12 @@
 import React from "react";
 import { CodeBlock, vs2015 } from "react-code-blocks";
-import { Divider, ScorePanel, CollapsibleText } from "./elements/elements";
-import { Button } from "./forms/Button";
+import {
+  Divider,
+  ScorePanel,
+  CollapsibleText,
+  NavBar,
+} from "./elements/elements";
+
 import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -190,6 +195,77 @@ export const PatternCollapsible = (props) => {
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
           {`<`}Collapsible Section{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternNavBar = (props) => {
+  const patternListTable = [
+    {
+      param: "button",
+      type:
+        "String - (NavButtonHome, NavButtonPlay, NavButtonImmerse, NavButtonNextGen, NavButtonScores, NavButtonRewards or NavButtonHome)",
+    },
+    {
+      param: "on",
+      type: "Boolean",
+    },
+    {
+      param: "size",
+      type: "Integer",
+    },
+    { param: "onClick", type: "Function" },
+  ];
+  const code = ` <NavButton
+  button="NavButtonHome"
+  on={false}
+  onClick={() => console.log("clicked")}
+/>`;
+  return (
+    <>
+      <div
+        className="raisedCard"
+        style={{
+          width: "50%",
+          height: "auto",
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
+        <div>
+          <NavBar gap={35} />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}Nav Buttons{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {

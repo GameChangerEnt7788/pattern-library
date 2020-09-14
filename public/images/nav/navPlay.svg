@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="86px" viewBox="0 0 85 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <defs>
+        <linearGradient x1="50%" y1="1.36266573%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#BE034B" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.381938374" offset="100%"></stop>
+        </linearGradient>
+        <path d="M85,22.5 C108.184723,22.5275574 126.972443,41.3152771 127,64.5 C127,87.6962586 108.196259,106.5 85,106.5 C61.8043824,106.5 43,87.6962586 43,64.5 C43,41.3043824 61.8043824,22.5 85,22.5 Z M73.9646371,48.3360152 C73.742271,48.7300913 73.625,49.1755127 73.625,49.6279941 L73.625,79.3711096 C73.625,80.8229011 74.8002727,82 76.2498186,82 C76.7028818,82.0006366 77.1476142,81.8825421 77.5410807,81.6585478 L103.789267,66.7895574 C105.051692,66.0758561 105.498346,64.4725956 104.785749,63.2082147 C104.551207,62.7903913 104.206444,62.4450935 103.789267,62.2095463 L77.5410807,47.3405559 C76.2792966,46.6262128 74.6778753,47.0722762 73.9646371,48.3360152 Z" id="path-2"></path>
+        <filter x="-0.6%" y="-0.6%" width="102.4%" height="102.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.672230114 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <pattern id="pattern-4" width="512" height="512" x="-469" y="-489.5" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-5"></use>
+        </pattern>
+        <image id="image-5" width="512" height="512" xlink:href={props.image}></image>
+        <filter x="-1.8%" y="-1.8%" width="104.8%" height="104.8%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="2" dy="2" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BottomNav-Copy-2" transform="translate(-43.000000, -22.000000)" fill-rule="nonzero">
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <use fill-opacity="0.12" fill="url(#pattern-4)" xlink:href="#path-2"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

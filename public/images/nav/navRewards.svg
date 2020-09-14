@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="51px" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <defs>
+        <linearGradient x1="50%" y1="0.155722128%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#C0C0C0" stop-opacity="0.938046329" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.381938374" offset="100%"></stop>
+        </linearGradient>
+        <path d="M806,42 L806,62 L790.594595,62 C788.622703,62 787,60.3368421 787,58.3157895 L787,42 L806,42 Z M827,42 L827,58.3157895 C827,60.3368421 825.377297,62 823.405405,62 L808,62 L808,42 L827,42 Z M820.145571,12 C825.943856,12.0021016 828,15.0788725 828,17.7143034 C828,20.7860886 825.145268,24.6820164 819.018945,27.0004308 L828.266667,27 C830.314667,27 832,28.58 832,30.5 L832,30.5 L832,35.5 C832,37.42 830.314667,39 828.266667,39 L828.266667,39 L808,39 L808.001089,28.9798485 C807.856209,28.9840747 807.710493,28.9876457 807.56394,28.9905524 C807.508088,28.9970951 807.452141,29 807.395883,29 L807.000488,28.9984028 C806.869021,28.9994655 806.736897,29 806.604117,29 C806.547859,29 806.491912,28.9970955 806.43649,28.9913787 C806.289842,28.9876509 806.144458,28.9840891 805.999906,28.979875 L806,39 L785.733333,39 C783.685333,39 782,37.42 782,35.5 L782,35.5 L782,30.5 C782,28.58 783.685333,27 785.733333,27 L785.733333,27 L794.981055,27.0001836 C788.854732,24.6814826 786,20.7850731 786,17.712908 C786,15.0771513 788.058284,12 793.856568,12 C800.661608,12 804.78304,16.4621022 807.000188,20.9874901 C809.216585,16.4622085 813.338596,12 820.145571,12 Z M793.856568,15.152819 C791.610001,15.152819 789.209382,15.8254204 789.209382,17.712908 C789.209382,20.3885569 793.957045,25.2573035 805.283568,25.7980475 C805.299972,25.7317373 805.315977,25.6640469 805.332448,25.5959312 C804.313947,22.0355727 801.370257,15.152819 793.856568,15.152819 Z M820.145571,15.1545308 C812.631182,15.1545308 809.687149,22.0338732 808.665529,25.5927837 C808.682831,25.6607277 808.698853,25.7284255 808.714412,25.7956774 L808.606771,25.8013351 C814.653248,25.5239214 818.465994,24.0212634 820.661212,22.7413772 C823.705846,20.9655087 824.790618,18.9794783 824.790618,17.7122018 C824.790618,15.8249475 822.392139,15.1545308 820.145571,15.1545308 Z" id="path-2"></path>
+        <filter x="-1.0%" y="-1.0%" width="104.0%" height="104.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.672230114 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <pattern id="pattern-4" width="512" height="512" x="270" y="-500" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-5"></use>
+        </pattern>
+        <image id="image-5" width="512" height="512" ></image>
+        <filter x="-3.0%" y="-3.0%" width="108.0%" height="108.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="2" dy="2" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(-1198.000000, -14.000000)" fill-rule="nonzero">
+            <g id="Topnavb" transform="translate(416.000000, 2.000000)">
+                <g id="Combined-Shape">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <use fill-opacity="0.12" fill="url(#pattern-4)" xlink:href="#path-2"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

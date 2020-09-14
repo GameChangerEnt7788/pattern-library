@@ -1,8 +1,16 @@
 import React from "react";
 import { CodeBlock, vs2015 } from "react-code-blocks";
 import { Input } from "./forms/Fields";
-import { Button, Switch, RadioButton } from "./forms/Button";
-import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  Button,
+  Switch,
+  RadioButton,
+  SecondaryButton,
+  TextButton,
+  DeleteCrumb,
+} from "./forms/Button";
+import { faLock, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { PlusCircle } from "./svgIcons.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const FormInput = (props) => {
   const patternListTable = [
@@ -145,8 +153,6 @@ export const PrimaryButton = (props) => {
     { param: "disabled", type: "Boolean" },
     { param: "fullwidth", type: "Boolean" },
     { param: "size", type: `String ("sm", "med" and "lg")` },
-    { param: "width", type: "Integer" },
-    { param: "fullwidh", type: "Boolean (100% width)" },
     { param: "color", type: "String (#hexCode)" },
     {
       param: "theme",
@@ -292,6 +298,186 @@ export const PrimaryButton = (props) => {
   );
 };
 
+export const PatternSecondaryButton = (props) => {
+  const patternListTable = [
+    { param: "label", type: "String" },
+    {
+      param: "submitting",
+      type: "String - text when submitting ({false} for no submitting state",
+    },
+    { param: "disabled", type: "Boolean" },
+    { param: "fullwidth", type: "Boolean" },
+    { param: "size", type: `String ("sm", "med" and "lg")` },
+    {
+      param: "icon",
+      type: `Component e.g. "<FontAwesomeIcon size="s" color="#FFFFFF" icon={faLock} />"`,
+    },
+    { param: "onClick", type: "Function (Submit action)" },
+    { param: "gap", type: "Integer" },
+  ];
+  const code = `<SecondaryButton
+  label="Medium Secondary button"
+  submitting={false}
+  fullwidth={false}
+  size={"med"}
+  disabled={false}
+  /*  onClick={submitButton} */
+  gap={35}
+/>`;
+  return (
+    <>
+      <div className="heroBackground" style={{ width: "50%" }}>
+        <div>
+          <SecondaryButton
+            label="Large Secondary button"
+            submitting={false}
+            fullwidth={false}
+            size={"lg"}
+            disabled={false}
+            /*  onClick={submitButton} */
+            gap={35}
+          />
+        </div>
+        <div>
+          <SecondaryButton
+            label="Medium Secondary button"
+            submitting={false}
+            fullwidth={false}
+            size={"med"}
+            disabled={false}
+            /*  onClick={submitButton} */
+            gap={35}
+          />
+        </div>
+        <div>
+          <SecondaryButton
+            label="Medium Button with icon"
+            submitting={false}
+            fullwidth={false}
+            size={"med"}
+            disabled={false}
+            icon={<FontAwesomeIcon size="s" color="#241C15" icon={faCheck} />}
+            /*  onClick={submitButton} */
+            gap={35}
+          />
+        </div>
+        <div>
+          <SecondaryButton
+            label="Small Secondary button"
+            submitting={false}
+            fullwidth={false}
+            size={"sm"}
+            disabled={false}
+            /*  onClick={submitButton} */
+            gap={35}
+          />
+        </div>
+        <div>
+          <SecondaryButton
+            label="Large Secondary button"
+            submitting={"Submitting..."}
+            fullwidth={false}
+            size={"lg"}
+            disabled={false}
+            /*  onClick={submitButton} */
+            gap={35}
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}Secondary Button{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternTextButton = (props) => {
+  const patternListTable = [
+    { param: "label", type: "String" },
+    {
+      param: "icon",
+      type: `Component e.g. "<FontAwesomeIcon size="s" color="#FFFFFF" icon={faLock} />"`,
+    },
+    { param: "onClick", type: "Function (Submit action)" },
+    { param: "gap", type: "Integer" },
+  ];
+  const code = `<TextButton
+  label="Text Button"
+  icon={<PlusCircle size={20} />}
+  /*  onClick={() => this.submitButton()} */
+  gap={35}
+/>`;
+  return (
+    <>
+      <div className="solidWhitePanel" style={{ width: "50%" }}>
+        <div>
+          <TextButton
+            label="Text Button"
+            icon={<PlusCircle size={20} />}
+            /*  onClick={submitButton} */
+            gap={35}
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}Secondary Button{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
 export const PatternSwitch = (props) => {
   const patternListTable = [
     { param: "onClick", type: "Function (Action)" },
@@ -315,6 +501,100 @@ export const PatternSwitch = (props) => {
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
           {`<`}Switch{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternDeleteCrumb = (props) => {
+  const patternListTable = [
+    { param: "label", type: "String" },
+    {
+      param: "id",
+      type: "String (! mandatory unique)",
+    },
+    { param: "onClick", type: "Function (Submit action)" },
+    { param: "gap", type: "Integer" },
+  ];
+  const code = `<DeleteCrumb
+  label="Basketball"
+  id="basketball"
+  onClick={() => console.log("submitButton")}
+  gap={6}
+/>`;
+  return (
+    <>
+      <div
+        className="solidWhitePanel"
+        style={{ width: "50%", display: "flex", flexWrap: "wrap" }}
+      >
+        <DeleteCrumb
+          label="Football"
+          id="football"
+          onClick={() => console.log("submitButton")}
+          gap={6}
+        />
+
+        <DeleteCrumb
+          label="Baseball"
+          id="baseball"
+          onClick={() => console.log("submitButton")}
+          gap={6}
+        />
+
+        <DeleteCrumb
+          label="Soccer"
+          id="Soccer"
+          onClick={() => console.log("submitButton")}
+          gap={6}
+        />
+        <DeleteCrumb
+          label="Track & Field"
+          id="Track"
+          onClick={() => console.log("submitButton")}
+          gap={6}
+        />
+        <DeleteCrumb
+          label="Basketball"
+          id="basketball"
+          onClick={() => console.log("submitButton")}
+          gap={6}
+        />
+        <DeleteCrumb
+          label="Jousting"
+          id="jousting"
+          onClick={() => console.log("submitButton")}
+          gap={6}
+        />
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}Crumb Delete Button{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {

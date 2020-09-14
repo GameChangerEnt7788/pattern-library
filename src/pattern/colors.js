@@ -15,10 +15,17 @@ export const Pallette = (props) => {
       description: "Secondary text colour on light background",
       type: "dark",
     },
+
     {
       name: "Ghostwhite",
       color: "#F8F8FF",
       description: "Primary text colour on dark background",
+      type: "light",
+    },
+    {
+      name: "Alto",
+      color: "#D8D8D8",
+      description: "Light Gray for secondary buttons",
       type: "light",
     },
     {

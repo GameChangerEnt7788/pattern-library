@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
+import {
+  NavButtonPlay,
+  NavButtonImmerse,
+  NavButtonNextGen,
+  NavButtonScores,
+  NavButtonRewards,
+  NavButtonHome,
+} from "../svgIcons.js";
 import gsap from "gsap";
+
 export const Button = (props) => {
   return (
     <div
@@ -25,8 +34,6 @@ export const Button = (props) => {
           textTransform: "uppercase",
           borderRadius: props.borderRadius,
           cursor: props.disabled || props.submitting ? "" : "pointer",
-          background: props.error ? "#FFF0F0" : "#ecedf1",
-          borderColor: props.error && "rgba(255, 4, 4, 0.5)",
           fontSize:
             props.size === "lg"
               ? "13px"
@@ -77,12 +84,65 @@ export const Button = (props) => {
   );
 };
 
+export const SecondaryButton = (props) => {
+  return (
+    <div
+      style={{
+        position: "relative",
+        /*         marginTop: props.gap, */
+        marginBottom: props.gap,
+      }}
+    >
+      <button
+        disabled={props.disabled || props.submitting}
+        onClick={props.onClick}
+        className="secondaryButton"
+        style={{
+          padding:
+            props.size === "lg"
+              ? "7px 30px 7px 30px"
+              : props.size === "med"
+              ? "8px 27px 8px 27px"
+              : props.size === "sm"
+              ? "1px 25px 1px 25px"
+              : "auto",
+          borderRadius: "7px",
+          cursor: props.disabled || props.submitting ? "" : "pointer",
+          border: `1px solid #979797`,
+          fontSize:
+            props.size === "lg"
+              ? "14px"
+              : props.size === "med"
+              ? "12px"
+              : props.size === "sm"
+              ? "10px"
+              : "auto",
+          background: "#D8D8D8",
+          color: props.disabled || props.submitting ? "B3B3B3" : "#241C15",
+          width: props.fullwidth ? "100%" : "auto",
+          height:
+            props.size === "lg"
+              ? "45px"
+              : props.size === "med"
+              ? "37px"
+              : props.size === "sm"
+              ? "31px"
+              : "auto",
+        }}
+      >
+        {props.icon && <span id="buttonIcon">{props.icon}</span>}
+        {props.submitting ? props.submitting : props.label}
+      </button>
+    </div>
+  );
+};
+
 export const TextButton = (props) => {
   return (
     <div
       style={{
         fontSize: "14px",
-        fontWeight: 900,
+        fontWeight: 600,
         marginBottom: props.gap,
         display: "inline-block",
       }}
@@ -94,14 +154,54 @@ export const TextButton = (props) => {
           alignItems: "center",
         }}
       >
-        <span style={{ marginRight: "7px" }}>
-          {props.locked ? (
-            <></>
-          ) : /*   <FontAwesomeIcon size="s" color="#EBAE58" icon={faLock} /> */
-          null}
-        </span>
+        <span style={{ marginRight: "7px" }}></span>
         {props.label}
         <span style={{ marginLeft: "7px" }}>{props.icon}</span>
+      </div>
+    </div>
+  );
+};
+
+export const DeleteCrumb = (props) => {
+  const [visible, setVisible] = useState(true);
+  console.log(visible);
+  const onSubmit = () => {
+    //  setVisible(false);
+    props.onClick();
+
+    gsap.to(document.getElementById(props.id), {
+      duration: 0.2,
+      width: 0,
+      delay: 0,
+      onComplete: setVisible,
+      onCompleteParams: [false],
+      //ease: Power4.easeOut,
+    });
+  };
+  return (
+    <div
+      className="deleteCrumbContainer"
+      id={props.id}
+      style={{
+        /*         marginTop: props.gap, */
+        marginBottom: props.gap,
+        display: visible ? "block" : "none",
+        overflow: "hidden",
+        /*  display: visible ? "block" : "none", */
+      }}
+    >
+      <div
+        className="deleteCrumb"
+        onClick={() => onSubmit()}
+        style={{ marginRight: "6px" }}
+      >
+        <div style={{ marginRight: "10px" }}>{props.label}</div>
+        <div>
+          <img
+            style={{ height: "12px", marginTop: "3px" }}
+            src="images/X.svg"
+          />
+        </div>
       </div>
     </div>
   );
@@ -317,6 +417,57 @@ export const RadioButton = (props) => {
             id="radioButton"
             style={off ? buttonOffCSS : buttonOnCSS}
           />
+        </div>
+        <div style={{ height: props.gap }} />
+      </div>
+    </div>
+  );
+};
+
+export const NavButton = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [on, highlighter] = useState(props.on ? true : false);
+
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+
+  const buttonClick = () => {
+    props.onClick && props.onClick();
+  };
+
+  const highlightFlip = () => {
+    highlighter(!on);
+  };
+
+  return (
+    <div style={{}}>
+      <div className="nav-button-container">
+        <div
+          className=""
+          /*  onClick={() => onSubmit()} */
+          onMouseEnter={() => highlightFlip()}
+          onMouseLeave={() => highlightFlip()}
+        >
+          {props.button === "NavButtonPlay" && (
+            <NavButtonPlay highlight={on} size={props.size} />
+          )}
+          {props.button === "NavButtonImmerse" && (
+            <NavButtonImmerse highlight={on} size={props.size} />
+          )}
+          {props.button === "NavButtonNextGen" && (
+            <NavButtonNextGen highlight={on} size={props.size} />
+          )}
+          {props.button === "NavButtonScores" && (
+            <NavButtonScores highlight={on} size={props.size} />
+          )}
+          {props.button === "NavButtonRewards" && (
+            <NavButtonRewards highlight={on} size={props.size} />
+          )}
+          {props.button === "NavButtonHome" && (
+            <NavButtonHome highlight={on} size={props.size} />
+          )}
         </div>
         <div style={{ height: props.gap }} />
       </div>
