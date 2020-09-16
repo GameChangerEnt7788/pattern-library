@@ -8,12 +8,20 @@ import {
   PatternSecondaryButton,
   PatternTextButton,
   PatternDeleteCrumb,
+  PatternHeartButton,
+  PatternSelect,
 } from "./pattern/formComponents";
 import {
   PatternDivider,
   PatternScorePanel,
   PatternCollapsible,
   PatternNavBar,
+  PatternTightPanel,
+  PatternBottomShadow,
+  PatternIconList,
+  PatternStarRating,
+  PatternSlideshow,
+  PatternSlidePanel,
 } from "./pattern/elementComponents";
 import { Pallette, Panels, Titles } from "./pattern/colors";
 import { Fonts, Scale } from "./pattern/type";
@@ -29,6 +37,12 @@ const componentList = [
         { ScorePanel: <PatternScorePanel /> },
         { Collapsible: <PatternCollapsible /> },
         { NavButtons: <PatternNavBar /> },
+        { TightPanel: <PatternTightPanel /> },
+        { BottomShadow: <PatternBottomShadow /> },
+        { IconList: <PatternIconList /> },
+        { StarRating: <PatternStarRating /> },
+        { Slideshow: <PatternSlideshow /> },
+        { SlidePanel: <PatternSlidePanel /> },
       ],
     },
   },
@@ -37,6 +51,8 @@ const componentList = [
       name: "Forms",
       components: [
         { FormInput: <FormInput /> },
+        { Select: <PatternSelect /> },
+
         { PrimaryButton: <PrimaryButton /> },
         { TextButton: <PatternTextButton /> },
 
@@ -44,6 +60,7 @@ const componentList = [
         { Switch: <PatternSwitch /> },
         { RadioButton: <PatternRadioButton /> },
         { DeleteCrumb: <PatternDeleteCrumb /> },
+        { HeartButton: <PatternHeartButton /> },
       ],
     },
   },
@@ -65,7 +82,7 @@ const foundationsList = [
     type: {
       name: "Grid system",
       components: [
-        { PrimaryContent: <PatternScorePanel /> },
+        { PrimaryContent: <PrimaryContent /> },
         /*         { SecondaryTiles: <SecondaryTiles /> },
         { SecondaryProminent: <SecondaryProminent /> },
         { FlushGrid: <FlushGrid /> },
@@ -83,7 +100,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternNavBar />,
+    selectedComponent: <PatternSlidePanel />,
     page: "components",
   };
   sendSearch = () => {

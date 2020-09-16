@@ -6,7 +6,11 @@ import {
   NavButtonScores,
   NavButtonRewards,
   NavButtonHome,
+  Heart,
+  Comment,
+  Share,
 } from "../svgIcons.js";
+import { nFormatter } from "../../methods/tools";
 import gsap from "gsap";
 
 export const Button = (props) => {
@@ -424,11 +428,153 @@ export const RadioButton = (props) => {
   );
 };
 
+export const HeartButton = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [on, buttonSwitch] = useState(props.on ? true : false);
+  const [rollover, buttonHover] = useState(props.on ? true : false);
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+
+  const onSubmit = () => {
+    props.onClick && props.onClick();
+
+    buttonSwitch(!on);
+  };
+
+  return (
+    <div
+      className="cursor"
+      onMouseEnter={() => buttonHover(!rollover)}
+      onMouseLeave={() => buttonHover(!rollover)}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+      }}
+    >
+      <div
+        onClick={() => onSubmit()}
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Heart
+          on={on}
+          size={props.size}
+          color={rollover ? "#000000" : props.color}
+        />
+      </div>
+      <div
+        className="borderBox"
+        style={{
+          color: rollover ? "#000000" : props.textColor,
+          fontSize: props.size - 3,
+          marginLeft: "4px",
+        }}
+      >
+        {nFormatter(props.likeCount)}
+      </div>
+    </div>
+  );
+};
+
+export const CommentButton = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [on, buttonHover] = useState(props.on ? true : false);
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+
+  const onSubmit = () => {
+    props.onClick && props.onClick();
+  };
+
+  return (
+    <div
+      className="cursor"
+      onMouseEnter={() => buttonHover(!on)}
+      onMouseLeave={() => buttonHover(!on)}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+      }}
+    >
+      <div
+        onClick={() => onSubmit()}
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Comment size={props.size} color={on ? "#000000" : props.color} />
+      </div>
+      <div
+        className="borderBox"
+        style={{
+          color: on ? "#000000" : props.textColor,
+          fontSize: props.size - 3,
+          marginLeft: "4px",
+        }}
+      >
+        {nFormatter(props.commentCount)}
+      </div>
+    </div>
+  );
+};
+
+export const ShareButton = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [on, buttonHover] = useState(props.on ? true : false);
+
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+
+  const onSubmit = () => {
+    props.onClick && props.onClick();
+  };
+
+  return (
+    <div
+      className="cursor"
+      onMouseEnter={() => buttonHover(!on)}
+      onMouseLeave={() => buttonHover(!on)}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+      }}
+    >
+      <div
+        onClick={() => onSubmit()}
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Share size={props.size} color={on ? "#000000" : props.color} />
+      </div>
+      <div
+        className="borderBox"
+        style={{
+          color: on ? "#000000" : props.textColor,
+          fontSize: props.size - 3,
+          marginLeft: "4px",
+        }}
+      >
+        Share
+      </div>
+    </div>
+  );
+};
 export const NavButton = (props) => {
   //const [open, setOpen] = useState(props.open);
 
   const [on, highlighter] = useState(props.on ? true : false);
-
+  /*   const [color, labelColor] = useState(); */
   /*   const disableButton = () => {
     buttonDisable(false);
   }; */
@@ -439,16 +585,24 @@ export const NavButton = (props) => {
 
   const highlightFlip = () => {
     highlighter(!on);
+    /*    labelColor("#241C15"); */
   };
 
   return (
     <div style={{}}>
       <div className="nav-button-container">
         <div
-          className=""
           /*  onClick={() => onSubmit()} */
+          className="nav-button-svg"
           onMouseEnter={() => highlightFlip()}
           onMouseLeave={() => highlightFlip()}
+          style={{
+            position: "absolute",
+            top: "5px",
+            display: "flex",
+            alignItems: "center",
+            height: 40,
+          }}
         >
           {props.button === "NavButtonPlay" && (
             <NavButtonPlay highlight={on} size={props.size} />
@@ -469,7 +623,16 @@ export const NavButton = (props) => {
             <NavButtonHome highlight={on} size={props.size} />
           )}
         </div>
-        <div style={{ height: props.gap }} />
+        <div
+          className="navButtonLabel"
+          id={props.button}
+          style={{
+            position: "absolute",
+            bottom: "7px",
+          }}
+        >
+          {props.label}
+        </div>
       </div>
     </div>
   );

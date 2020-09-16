@@ -32,3 +32,24 @@ export const text_truncate = (str, length, ending) => {
     return str;
   }
 };
+
+export const nFormatter = (num) => {
+  if (num >= 1000000000) {
+    return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "G";
+  }
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+  }
+  return num;
+};
+
+export const formatDollarsToCents = (value) => {
+  value = (value + "").replace(/[^\d.-]/g, "");
+  if (value && value.includes(".")) {
+    value = value.substring(0, value.indexOf(".") + 3);
+  }
+  return value ? Math.round(parseFloat(value) * 100) : 0;
+};

@@ -1,6 +1,6 @@
 import React from "react";
 import { CodeBlock, vs2015 } from "react-code-blocks";
-import { Input } from "./forms/Fields";
+import { Input, Select } from "./forms/Fields";
 import {
   Button,
   Switch,
@@ -8,10 +8,12 @@ import {
   SecondaryButton,
   TextButton,
   DeleteCrumb,
+  HeartButton,
 } from "./forms/Button";
 import { faLock, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { PlusCircle } from "./svgIcons.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export const FormInput = (props) => {
   const patternListTable = [
     { param: "Placeholder", type: "String" },
@@ -129,6 +131,76 @@ export const FormInput = (props) => {
         </div>
       </div>
 
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternSelect = (props) => {
+  const patternListTable = [
+    { param: "Placeholder", type: "String" },
+    { param: "width", type: "Integer" },
+    { param: "height", type: "Integer (of select input)" },
+    { param: "listOptions", type: "Object Array" },
+    { param: "onChange", type: "Function" },
+  ];
+
+  const listOptions = [{ item: "Top comments" }, { item: "Most recent" }];
+
+  const code = `
+  const listOptions = [
+    { item: "Top comments" },
+    { item: "Most recent" }
+  ];
+
+  <Select
+  placeholder="Top comments"
+  width={200}
+  height={30}
+  listOptions={listOptions}
+  onChange={() => console.log("Item selected")}
+/>`;
+
+  return (
+    <>
+      <div className="raisedCard">
+        <div>
+          <Select
+            placeholder="Top comments"
+            width={200}
+            height={30}
+            listOptions={listOptions}
+            onChange={() => console.log("Item selected")}
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}Select{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
       <div className="card" style={{ marginBottom: "30px" }}>
         <h3 style={{ textDecoration: "underline" }}>Code</h3>
         <CodeBlock
@@ -268,7 +340,7 @@ export const PrimaryButton = (props) => {
 
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
-          {`<`}Primary Button{`/>`}
+          {`<`}PrimaryButton{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {
@@ -646,7 +718,74 @@ export const PatternRadioButton = (props) => {
 
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
-          {`<`}Radio Button{`/>`}
+          {`<`}RadioButton{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternHeartButton = (props) => {
+  const patternListTable = [
+    { param: "onClick", type: "Function (Action)" },
+    { param: "likeCount", type: "Integer" },
+    { param: "color", type: "String (hex code for icon color)" },
+    { param: "textColor", type: "String (hex code for count text)" },
+    { param: "on", type: "Boolean" },
+    { param: "size", type: "Integer (Height)" },
+  ];
+  const code = `<HeartButton
+  onClick={() => console.log("clicked")}
+  on={false}
+  size={17}
+  color="#C6C6C6"
+  textColor="#FFD462"
+  likeCount={13634}
+/>`;
+  return (
+    <>
+      <div
+        className="primaryBackground"
+        style={{ width: "50%", height: "80px" }}
+      >
+        <div>
+          <HeartButton
+            onClick={() => console.log("clicked")}
+            on={false}
+            size={17}
+            color="#C6C6C6"
+            textColor="#FFD462"
+            likeCount={13634}
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}HeartButton{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {
