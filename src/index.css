@@ -85,7 +85,8 @@ textarea,
 .modal-header,
 .center,
 .gradient-bottom-border,
-.statsTicker-item {
+.statsTicker-item,
+.solidWhitePanel {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
@@ -149,7 +150,12 @@ p {
 }
 
 .switch-button,
-.switch-button-back {
+.switch-button-back,
+.titleBar,
+.titleBar-highlight,
+.titleBar:hover,
+.tabbedHeader,
+.titleBar-highlight:hover {
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -523,7 +529,7 @@ button[disabled]:hover {
 .primaryBackground {
   background-color: #241c15;
   background-image: url("/images/bgTile.png"),
-    linear-gradient(270deg, #000000 0%, #444444 51%, #000000 100%);
+    linear-gradient(270deg, #241c15 0%, #5a5a5a 51%, #241c15 100%);
   background-repeat: repeat;
   background-size: 350px, cover, cover;
   padding: 20px;
@@ -626,6 +632,7 @@ button[disabled]:hover {
   text-transform: uppercase;
   color: #f8f8ff;
   padding: 6px 8px 3px 8px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .titleBar {
   background-image: linear-gradient(
@@ -635,13 +642,18 @@ button[disabled]:hover {
     ),
     linear-gradient(180deg, #3b3b3b 0%, #000000 100%);
 }
-.titleBar-highlight {
+.titleBar-highlight,
+.titleBar:hover {
   background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.08) 50%,
       rgba(0, 0, 0, 0.03) 43%
     ),
     linear-gradient(180deg, #cc9600 0%, #683300 100%);
+}
+.titleBar:hover,
+.titleBar-highlight:hover {
+  filter: brightness(130%);
 }
 
 .title-watch {
@@ -1226,4 +1238,10 @@ box-shadow: 1px 1px 0 0 rgba(255,255,255,0.67), inset 2px 2px 1px 0 rgba(0,0,0,0
     rgba(161, 161, 161, 0.651) 100%
   );
   border-radius: 40px;
+}
+
+/* Tabbed Sections */
+
+.tabbedHeader {
+  display: grid;
 }

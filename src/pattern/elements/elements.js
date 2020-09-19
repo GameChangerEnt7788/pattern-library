@@ -557,11 +557,14 @@ export const StatsTicker = (props) => {
 
   console.log(item);
   const onSelect = (e) => {
+    const titleElement = document.getElementById(e.target.id).style;
     for (let i = 0; i < 4; i++) {
-      document.getElementById(i).style.setProperty("color", "#FFFFFF");
+      document.getElementById(i).style.setProperty("color", "#D8D8D8");
+      document.getElementById(i).style.setProperty("pointer-events", "all");
     }
     dateSelect(e.target.id);
-    document.getElementById(e.target.id).style.setProperty("color", "#FFD462");
+    titleElement.setProperty("color", "#FFD462");
+    titleElement.setProperty("pointer-events", "none");
   };
   const onHighlight = (e) => {
     element !== e.target.id &&
@@ -584,10 +587,15 @@ export const StatsTicker = (props) => {
       <h2 className="shadowHeader">Stats Ticker</h2>
       <div className="tickerHeader blackOverlay">
         {props.data.map((val, i) => {
+          const id = i;
           return (
             <div
-              id={`${i}`}
-              style={{ color: i === 3 && "#FFD462" }}
+              id={`${id}`}
+              disabled={true}
+              style={{
+                color: id === 3 && "#FFD462",
+                pointerEvents: element === id && "none",
+              }}
               onClick={(e) => onSelect(e)}
               onMouseEnter={(e) => onHighlight(e)}
               onMouseLeave={(e) => offHighlight(e)}
@@ -711,21 +719,6 @@ export const RatingsChart = (props) => {
           </div>
         );
       })}
-      {/*       <div className="tickerHeader blackOverlay">
-        {props.data.map((val, i) => {
-          return (
-            <div
-              id={`${i}`}
-              style={{ color: i === 3 && "#FFD462" }}
-              onClick={(e) => onSelect(e)}
-              onMouseEnter={(e) => onHighlight(e)}
-              onMouseLeave={(e) => offHighlight(e)}
-            >
-              {val.date}
-            </div>
-          );
-        })}
-      </div> */}
     </div>
   );
 };

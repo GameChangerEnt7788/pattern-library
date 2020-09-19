@@ -29,6 +29,9 @@ import {
   PatternStatsTicker,
   PatternRatingsChart,
 } from "./pattern/elementComponents";
+
+import { PatternTabbedSections } from "./pattern/sectionComponents";
+
 import { Pallette, Panels, Titles } from "./pattern/colors";
 import { Fonts, Scale } from "./pattern/type";
 
@@ -77,6 +80,12 @@ const componentList = [
       ],
     },
   },
+  {
+    type: {
+      name: "Sections",
+      components: [{ TabbedSections: <PatternTabbedSections /> }],
+    },
+  },
 ];
 
 const foundationsList = [
@@ -113,7 +122,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternRatingsChart />,
+    selectedComponent: <PatternTabbedSections />,
     page: "components",
   };
   sendSearch = () => {

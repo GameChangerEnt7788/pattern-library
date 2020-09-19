@@ -45,7 +45,7 @@ class SlideShow extends Component {
     this.buttonEnabler();
 
     this.setState({ count: this.state.count + 1 }, () => {
-      this.props.getCount(this.state.count);
+      this.props.getCount && this.props.getCount(this.state.count);
 
       gsap.to(
         document.getElementById("topimg"),
@@ -65,7 +65,7 @@ class SlideShow extends Component {
   imgBack = () => {
     this.buttonEnabler();
     this.setState({ count: this.state.count - 1 }, () => {
-      this.props.getCount(this.state.count);
+      this.props.getCount && this.props.getCount(this.state.count);
 
       gsap.to(
         document.getElementById("topimg"),
@@ -84,7 +84,7 @@ class SlideShow extends Component {
   imgUp = (i) => {
     this.buttonEnabler();
     this.setState({ count: i }, () => {
-      this.props.getCount(this.state.count);
+      this.props.getCount && this.props.getCount(this.state.count);
 
       gsap.to(
         document.getElementById("topimg"),
