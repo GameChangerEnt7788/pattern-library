@@ -9,6 +9,7 @@ import {
   Heart,
   Comment,
   Share,
+  Views,
 } from "../svgIcons.js";
 import { nFormatter } from "../../methods/tools";
 import gsap from "gsap";
@@ -463,13 +464,13 @@ export const HeartButton = (props) => {
         <Heart
           on={on}
           size={props.size}
-          color={rollover ? "#000000" : props.color}
+          color={rollover ? `${props.color}B3` : props.color}
         />
       </div>
       <div
         className="borderBox"
         style={{
-          color: rollover ? "#000000" : props.textColor,
+          color: rollover ? `${props.textColor}B3` : props.textColor,
           fontSize: props.size - 3,
           marginLeft: "4px",
         }}
@@ -509,17 +510,68 @@ export const CommentButton = (props) => {
           alignItems: "center",
         }}
       >
-        <Comment size={props.size} color={on ? "#000000" : props.color} />
+        <Comment
+          size={props.size}
+          color={on ? `${props.color}B3` : props.color}
+        />
       </div>
       <div
         className="borderBox"
         style={{
-          color: on ? "#000000" : props.textColor,
+          color: on ? `${props.textColor}B3` : props.textColor,
           fontSize: props.size - 3,
           marginLeft: "4px",
         }}
       >
         {nFormatter(props.commentCount)}
+      </div>
+    </div>
+  );
+};
+
+export const ViewCount = (props) => {
+  //const [open, setOpen] = useState(props.open);
+
+  const [on, buttonHover] = useState(props.on ? true : false);
+  /*   const disableButton = () => {
+    buttonDisable(false);
+  }; */
+
+  const onSubmit = () => {
+    props.onClick && props.onClick();
+  };
+
+  return (
+    <div
+      className="cursor"
+      onMouseEnter={() => buttonHover(!on)}
+      onMouseLeave={() => buttonHover(!on)}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+      }}
+    >
+      <div
+        onClick={() => onSubmit()}
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Views
+          size={props.size}
+          color={on ? `${props.color}B3` : props.color}
+        />
+      </div>
+      <div
+        className="borderBox"
+        style={{
+          color: on ? `${props.textColor}B3` : props.textColor,
+          fontSize: props.size - 3,
+          marginLeft: "4px",
+        }}
+      >
+        {nFormatter(props.viewCount)}
       </div>
     </div>
   );
@@ -555,12 +607,15 @@ export const ShareButton = (props) => {
           alignItems: "center",
         }}
       >
-        <Share size={props.size} color={on ? "#000000" : props.color} />
+        <Share
+          size={props.size}
+          color={on ? `${props.color}B3` : props.color}
+        />
       </div>
       <div
         className="borderBox"
         style={{
-          color: on ? "#000000" : props.textColor,
+          color: on ? `${props.textColor}B3` : props.textColor,
           fontSize: props.size - 3,
           marginLeft: "4px",
         }}
@@ -570,6 +625,7 @@ export const ShareButton = (props) => {
     </div>
   );
 };
+
 export const NavButton = (props) => {
   //const [open, setOpen] = useState(props.open);
 

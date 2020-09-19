@@ -98,7 +98,7 @@ export const Select = (props) => {
   const setPlaceholder = (item) => {
     setPlaceholderHook(item);
     selected(!on);
-    props.onChange();
+    props.onChange(item);
   };
   const menuClose = () => {
     //  props.onClick && props.onClick();

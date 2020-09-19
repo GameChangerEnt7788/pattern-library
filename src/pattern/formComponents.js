@@ -9,6 +9,9 @@ import {
   TextButton,
   DeleteCrumb,
   HeartButton,
+  CommentButton,
+  ShareButton,
+  ViewCount,
 } from "./forms/Button";
 import { faLock, faEnvelope, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { PlusCircle } from "./svgIcons.js";
@@ -786,6 +789,197 @@ export const PatternHeartButton = (props) => {
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
           {`<`}HeartButton{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternCommentButton = (props) => {
+  const patternListTable = [
+    { param: "onClick", type: "Function (Action)" },
+    { param: "commentCount", type: "Integer" },
+    { param: "color", type: "String (hex code for icon color)" },
+    { param: "textColor", type: "String (hex code for count text)" },
+    { param: "size", type: "Integer (Height)" },
+  ];
+  const code = `<HeartButton
+  onClick={() => console.log("clicked")}
+  on={false}
+  size={17}
+  color="#C6C6C6"
+  textColor="#FFD462"
+  likeCount={13634}
+/>`;
+  return (
+    <>
+      <div
+        className="primaryBackground"
+        style={{ width: "50%", height: "80px" }}
+      >
+        <div>
+          <CommentButton
+            onClick={() => console.log("clicked")}
+            size={17}
+            commentCount={52343}
+            color="#797979"
+            textColor="#808080"
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}CommentButton{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternViewCount = (props) => {
+  const patternListTable = [
+    { param: "onClick", type: "Function (Action)" },
+    { param: "viewCount", type: "Integer" },
+    { param: "color", type: "String (hex code for icon color)" },
+    { param: "textColor", type: "String (hex code for count text)" },
+    { param: "size", type: "Integer (Height)" },
+  ];
+  const code = `<HeartButton
+  onClick={() => console.log("clicked")}
+  on={false}
+  size={17}
+  color="#C6C6C6"
+  textColor="#FFD462"
+  likeCount={13634}
+/>`;
+  return (
+    <>
+      <div
+        className="primaryBackground"
+        style={{ width: "50%", height: "80px" }}
+      >
+        <div>
+          <ViewCount
+            onClick={() => console.log("clicked")}
+            size={17}
+            viewCount={52343}
+            color="#797979"
+            textColor="#808080"
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}ViewCount{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternShareButton = (props) => {
+  const patternListTable = [
+    { param: "onClick", type: "Function (Action)" },
+    { param: "color", type: "String (hex code for icon color)" },
+    { param: "textColor", type: "String (hex code for count text)" },
+    { param: "size", type: "Integer (Height)" },
+  ];
+  const code = `<ShareButton
+  onClick={() => console.log("clicked")}
+  size={17}
+  color="#797979"
+  textColor="#808080"
+/>`;
+  return (
+    <>
+      <div
+        className="primaryBackground"
+        style={{ width: "50%", height: "80px" }}
+      >
+        <div>
+          <ShareButton
+            onClick={() => console.log("clicked")}
+            size={17}
+            color="#797979"
+            textColor="#808080"
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}CommentButton{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {

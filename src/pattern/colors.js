@@ -229,16 +229,34 @@ export const Panels = (props) => {
         "Light gray raised card for highlighted content, paired with bottom shadow component",
       type: "dark",
       code: `.raisedCard {
-        background-color: #4e4e4e;
+        background-color: #a7a7a7;
         background-image: url("/images/bgTile.png"),
           linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.67) 0%,
             rgba(136, 136, 136, 0.28) 100%
           );
-        background-repeat: repeat;
-        background-size: 40px, cover, cover;
-        background-position: top left, center center, center center;
+        background-repeat: repeat, cover, cover;
+        background-size: 270px;
+        padding: 20px;
+      }`,
+    },
+    {
+      name: "Raised card dark",
+      class: "raisedCardDark",
+      description: "Darker gray raised card for modal headers",
+      type: "dark",
+      code: `.raisedCardDark {
+        background-color: #241c15;
+        background-image: url("/images/bgTile.png"),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.47) 0%,
+            rgba(136, 136, 136, 0.28) 100%
+          );
+        background-repeat: repeat, cover, cover;
+        background-size: 270px;
+        padding: 20px;
       }`,
     },
     {

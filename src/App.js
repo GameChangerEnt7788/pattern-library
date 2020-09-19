@@ -9,7 +9,10 @@ import {
   PatternTextButton,
   PatternDeleteCrumb,
   PatternHeartButton,
+  PatternCommentButton,
+  PatternShareButton,
   PatternSelect,
+  PatternViewCount,
 } from "./pattern/formComponents";
 import {
   PatternDivider,
@@ -22,9 +25,13 @@ import {
   PatternStarRating,
   PatternSlideshow,
   PatternSlidePanel,
+  PatternModalMain,
+  PatternStatsTicker,
+  PatternRatingsChart,
 } from "./pattern/elementComponents";
 import { Pallette, Panels, Titles } from "./pattern/colors";
 import { Fonts, Scale } from "./pattern/type";
+
 import {
   PrimaryContent /* SecondaryTiles, SecondaryProminent,FlushGrid, Scores */,
 } from "./pattern/grid";
@@ -43,6 +50,10 @@ const componentList = [
         { StarRating: <PatternStarRating /> },
         { Slideshow: <PatternSlideshow /> },
         { SlidePanel: <PatternSlidePanel /> },
+        { ViewCount: <PatternViewCount /> },
+        { ModalMain: <PatternModalMain /> },
+        { StatsTicker: <PatternStatsTicker /> },
+        { RatingsChart: <PatternRatingsChart /> },
       ],
     },
   },
@@ -61,6 +72,8 @@ const componentList = [
         { RadioButton: <PatternRadioButton /> },
         { DeleteCrumb: <PatternDeleteCrumb /> },
         { HeartButton: <PatternHeartButton /> },
+        { CommentButton: <PatternCommentButton /> },
+        { ShareButton: <PatternShareButton /> },
       ],
     },
   },
@@ -100,7 +113,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternSlidePanel />,
+    selectedComponent: <PatternRatingsChart />,
     page: "components",
   };
   sendSearch = () => {

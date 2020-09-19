@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="123px" height="110px" viewBox="0 0 123 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>play-button (1)</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#B60404" offset="0%"></stop>
+            <stop stop-color="#EC2727" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="12" transform="translate(-899.000000, -1207.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="play-button-(1)" transform="translate(899.000000, 1207.000000)">
+                <path d="M123,101 L123,9 C123,4.02943725 118.970563,-9.13077564e-16 114,0 L9,0 C4.02943725,9.13077564e-16 -6.08718376e-16,4.02943725 0,9 L0,101 C6.08718376e-16,105.970563 4.02943725,110 9,110 L114,110 C118.970563,110 123,105.970563 123,101 Z M44.0435417,22.2783424 L95.2650575,56.3095238 L44.0435417,90.3407052 L44.0435417,22.2783424 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,8 +10,12 @@ import {
   IconList,
   StarRating,
   SlidePanel,
+  StatsTicker,
+  RatingsChart,
 } from "./elements/elements";
+import { Button } from "./forms/Button";
 import SlideShow from "./elements/SlideShow";
+import { ModalMain } from "./ModalMain";
 import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -784,6 +788,454 @@ export const PatternBottomShadow = (props) => {
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
           {`<`}BottomShadow{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternModalMain = (props) => {
+  const patternListTable = [
+    { param: "modalIsOpen", type: "Boolean (Start open or closed)" },
+    { param: "button", type: "JSX (Launch button - set to false for none)" },
+    { param: "content", type: "JSX (whatever goes in the modal)" },
+    {
+      param: "closeBtn",
+      type:
+        "JSX (if there is a close button at the bottom also - set to false for none)",
+    },
+    { param: "width", type: "Integer (or String for percentage e.g. '50%')" },
+    { param: "height", type: "Integer (or String for percentage e.g. '50%')" },
+    { param: "fullwidth", type: "Boolean" },
+  ];
+  const code = `
+  const content = (
+    <div className="center-column">
+      <div className="primaryBackground getReady">
+        <img src="images/getReady.png" />
+      </div>
+      <div className="getReady-content">
+        <h2>Congrats!</h2>
+        <div>You can now watch The Biggest Fan via Youtube Premium.</div>
+        <div>
+          <img src="images/ytIcon.svg" />
+        </div>
+      </div>
+    </div>
+  );
+  const launchButton = (
+    <Button
+      label="Launch modal"
+      submitting={false}
+      fullwidth={false}
+      size={"lg"}
+      color="#DDDDDD"
+      disabled={false}
+      borderRadius={40}
+      /*  onClick={submitButton} */
+      gradient={["#BE034B", "#000000"]}
+      gap={35}
+    />
+  );
+  const closeBtn = (
+    <Button
+      label="Continue"
+      submitting={false}
+      fullwidth={false}
+      size={"med"}
+      color="#DDDDDD"
+      disabled={false}
+      borderRadius={40}
+      /*  onClick={submitButton} */
+      gradient={["#BE034B", "#000000"]}
+      gap={35}
+    />
+  );
+
+  <ModalMain
+            modalIsOpen={false}
+            button={launchButton}
+            content={content}
+            closeBtn={closeBtn}
+            width={"60%"}
+            height={"auto"}
+          />`;
+  const content = (
+    <div className="center-column">
+      <div className="primaryBackground getReady">
+        <img src="images/getReady.png" />
+      </div>
+      <div className="getReady-content">
+        <h2>Congrats!</h2>
+        <div>You can now watch The Biggest Fan via Youtube Premium.</div>
+        <div>
+          <img src="images/ytIcon.svg" />
+        </div>
+      </div>
+    </div>
+  );
+  const launchButton = (
+    <Button
+      label="Launch modal"
+      submitting={false}
+      fullwidth={false}
+      size={"lg"}
+      color="#DDDDDD"
+      disabled={false}
+      borderRadius={40}
+      /*  onClick={submitButton} */
+      gradient={["#BE034B", "#000000"]}
+      gap={35}
+    />
+  );
+  const closeBtn = (
+    <Button
+      label="Continue"
+      submitting={false}
+      fullwidth={false}
+      size={"med"}
+      color="#DDDDDD"
+      disabled={false}
+      borderRadius={40}
+      /*  onClick={submitButton} */
+      gradient={["#BE034B", "#000000"]}
+      gap={35}
+    />
+  );
+  return (
+    <>
+      <div
+        className="raisedCard"
+        style={{
+          width: "50%",
+          height: "auto",
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
+        <div>
+          <ModalMain
+            modalIsOpen={false}
+            button={launchButton}
+            content={<div>{content}</div>}
+            closeBtn={<div>{closeBtn}</div>}
+            width={"60%"}
+            height={"auto"}
+          />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}ModalMain{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternStatsTicker = (props) => {
+  const data = [
+    {
+      date: "MAR 22",
+      games: [
+        {
+          teamA: { name: "Buckaroos", score: 24 },
+          teamB: { name: "Snowflakes", score: 13 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Shellfish", score: 5 },
+          teamB: { name: "Meerkats", score: 17 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Swashbucklers", score: 2 },
+          teamB: { name: "Raging Eagles", score: 1 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Sitting Ducks", score: 7 },
+          teamB: { name: "Lame Ducks", score: 22 },
+          ppd: false,
+        },
+      ],
+    },
+    {
+      date: "MAR 23",
+      games: [
+        {
+          teamA: { name: "Meerkats", score: 42 },
+          teamB: { name: "Shellfish", score: 2 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Sitting Ducks", score: 2 },
+          teamB: { name: "Raging Eagles", score: 41 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Swashbucklers", score: 21 },
+          teamB: { name: "Lame ducks", score: 6 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Snowflakes", score: 2 },
+          teamB: { name: "Buckaroos", score: 5 },
+          ppd: false,
+        },
+      ],
+    },
+    {
+      date: "MAR 24",
+      games: [
+        {
+          teamA: { name: "Toadstools", score: 14 },
+          teamB: { name: "Willows", score: 2 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Pumpkin Heads", score: 21 },
+          teamB: { name: "Skirt Lifters", score: 23 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Wig Warmers", score: 3 },
+          teamB: { name: "Wet Workers", score: 3 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Tool Boxes", score: 3 },
+          teamB: { name: "Duh Masses", score: 6 },
+          ppd: false,
+        },
+      ],
+    },
+    {
+      date: "TODAY",
+      games: [
+        {
+          teamA: { name: "Tadpoles", score: 14 },
+          teamB: { name: "Street Fighters", score: 2 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Lump Heads", score: 21 },
+          teamB: { name: "Trash Eaters", score: 23 },
+          ppd: true,
+        },
+        {
+          teamA: { name: "Road Killers", score: 3 },
+          teamB: { name: "Pot Luckers", score: 3 },
+          ppd: true,
+        },
+        {
+          teamA: { name: "Phat Joes", score: 3 },
+          teamB: { name: "Bee Gasses", score: 6 },
+          ppd: true,
+        },
+      ],
+    },
+  ];
+  const listOptions = [
+    { item: "Basketball" },
+    { item: "Football" },
+    { item: "Hockey" },
+    { item: "Baseball" },
+    { item: "Soccer" },
+  ];
+  const patternListTable = [
+    { param: "data", type: "Object Array (see sample)" },
+    { param: "listOptions", type: "Object Array (see sample)" },
+    { param: "width", type: "Integer" },
+    { param: "fullwidth", type: "Boolean" },
+  ];
+
+  const code = `
+  // Icons for sports must be saved in images/ folder in the following format:
+
+  sportsIcon_[/*list item*/].png
+  e.g  "images/sportsIcon_Basketball.png"
+
+  const listOptions = [
+    { item: "Basketball" },
+    { item: "Football" },
+    { item: "Hockey" },
+    { item: "Baseball" },
+    { item: "Soccer" },
+  ];
+
+  /* Each item has today's date formatted as "MMM DD",
+  and all games and scores in a Games Object Array */
+
+  const data = [
+    {
+      date: "MAR 22",
+      games: [
+        {
+          teamA: { name: "Buckaroos", score: 24 },
+          teamB: { name: "Snowflakes", score: 13 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Shellfish", score: 5 },
+          teamB: { name: "Meerkats", score: 17 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Swashbucklers", score: 2 },
+          teamB: { name: "Raging Eagles", score: 1 },
+          ppd: false,
+        },
+        {
+          teamA: { name: "Sitting Ducks", score: 7 },
+          teamB: { name: "Lame Ducks", score: 22 },
+          ppd: false,
+        },
+      ],
+    }
+  ];
+
+
+
+  <StatsTicker
+  data={data}
+  listOptions={listOptions}
+  fullwidth
+  />`;
+  return (
+    <>
+      <div
+        className="primaryBackground"
+        style={{
+          width: "50%",
+          height: "auto",
+          padding: "80px",
+          position: "relative",
+        }}
+      >
+        <div>
+          <StatsTicker data={data} listOptions={listOptions} fullwidth />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}StatsTicker{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternRatingsChart = (props) => {
+  const data = [68, 12, 10, 6, 4];
+
+  const patternListTable = [
+    {
+      param: "data",
+      type: "Array (5 aggregate percentages for each star rating)",
+    },
+    { param: "width", type: "Integer" },
+    { param: "fullwidth", type: "Boolean" },
+  ];
+
+  const code = `
+  const data = [68, 12, 10, 6, 4];
+
+  <RatingsChart
+  data={data}
+  fullwidth
+  />`;
+  return (
+    <>
+      <div
+        className="solidWhitePanel"
+        style={{
+          width: "70%",
+          height: "auto",
+          padding: "30px",
+          position: "relative",
+        }}
+      >
+        <div>
+          <RatingsChart data={data} fullwidth />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}RatingsChart{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Stars, TallChevron } from "../svgIcons.js";
-import { nFormatter, formatDollarsToCents } from "../../methods/tools";
+import { Stars } from "../svgIcons.js";
+import { nFormatter } from "../../methods/tools";
 import {
   NavButton,
   TextButton,
@@ -10,6 +10,7 @@ import {
   ShareButton,
   HeartButton,
 } from "../forms/Button";
+import { Select } from "../forms/Fields";
 import SlideShow from "./SlideShow";
 import gsap from "gsap";
 export const Divider = (props) => {
@@ -545,6 +546,186 @@ export const BottomShadow = (props) => {
           height: props.height,
         }}
       />
+    </div>
+  );
+};
+
+export const StatsTicker = (props) => {
+  // const [element, buttonGlow] = useState(false);
+  const [element, dateSelect] = useState(3);
+  const [item, selectItem] = useState("Basketball");
+
+  console.log(item);
+  const onSelect = (e) => {
+    for (let i = 0; i < 4; i++) {
+      document.getElementById(i).style.setProperty("color", "#FFFFFF");
+    }
+    dateSelect(e.target.id);
+    document.getElementById(e.target.id).style.setProperty("color", "#FFD462");
+  };
+  const onHighlight = (e) => {
+    element !== e.target.id &&
+      document
+        .getElementById(e.target.id)
+        .style.setProperty("color", "#F8F8FF");
+  };
+  const offHighlight = (e) => {
+    element !== e.target.id &&
+      document
+        .getElementById(e.target.id)
+        .style.setProperty("color", "#D8D8D8");
+  };
+
+  return (
+    <div
+      className="statsTicker-container"
+      style={{ width: props.fullwidth ? "100%" : props.width }}
+    >
+      <h2 className="shadowHeader">Stats Ticker</h2>
+      <div className="tickerHeader blackOverlay">
+        {props.data.map((val, i) => {
+          return (
+            <div
+              id={`${i}`}
+              style={{ color: i === 3 && "#FFD462" }}
+              onClick={(e) => onSelect(e)}
+              onMouseEnter={(e) => onHighlight(e)}
+              onMouseLeave={(e) => offHighlight(e)}
+            >
+              {val.date}
+            </div>
+          );
+        })}
+      </div>
+      <div className="sportsIcon">
+        <Select
+          placeholder={props.listOptions[0].item}
+          width={200}
+          height={30}
+          listOptions={props.listOptions}
+          onChange={selectItem}
+        />
+        <img id="icon" src={`images/sportsIcon_${item}.png`} />
+      </div>
+      <div
+        className="blackOverlay"
+        style={{
+          borderRadius: 10,
+        }}
+      >
+        {props.data[element].games.map((val, i) => {
+          return (
+            <>
+              <div className="statsTicker-item">
+                <div>
+                  <div id="teamA">{val.teamA.name}</div>
+                  <div id="teamB">{val.teamB.name}</div>
+                </div>
+                <div
+                  className="statsTicker-scores"
+                  style={{ textAlign: "right" }}
+                >
+                  {val.ppd ? (
+                    <div className="statsTicker-ppd">PPD</div>
+                  ) : (
+                    <>
+                      <div
+                        id="teamA"
+                        style={{
+                          color:
+                            val.teamA.score > val.teamB.score
+                              ? "#26901D"
+                              : val.teamA.score === val.teamB.score
+                              ? "#906E1D"
+                              : "#B70000",
+                        }}
+                      >
+                        {val.teamA.score}
+                      </div>
+
+                      <div
+                        id="teamB"
+                        style={{
+                          color:
+                            val.teamB.score > val.teamA.score
+                              ? "#26901D"
+                              : val.teamA.score === val.teamB.score
+                              ? "#906E1D"
+                              : "#B70000",
+                        }}
+                      >
+                        {val.teamB.score}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div
+                style={{
+                  padding: "0 20px 0 20px",
+                }}
+              >
+                <div className="gradient-bottom-border" />
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export const RatingsChart = (props) => {
+  // const [element, buttonGlow] = useState(false);
+  const [element, dateSelect] = useState(3);
+
+  const onHighlight = (e) => {
+    element !== e.target.id &&
+      document
+        .getElementById(e.target.id)
+        .style.setProperty("color", "#F8F8FF");
+  };
+
+  return (
+    <div
+      className="statsTicker-container"
+      style={{ width: props.fullwidth ? "100%" : props.width }}
+    >
+      {props.data.map((val, i) => {
+        console.log(val);
+        return (
+          <div className="ratingBar-row">
+            <div>
+              <StarRating
+                size={22}
+                onColor="#FFBE36"
+                offColor="#D8D8D8"
+                percent={100 - i * 20}
+              />
+            </div>
+            <div className="ratingBar-container">
+              <div className="ratingBar-on" style={{ width: `${val}%` }} />
+              <div className="ratingBar-off" />
+            </div>
+            <div id="percent">{val}%</div>
+          </div>
+        );
+      })}
+      {/*       <div className="tickerHeader blackOverlay">
+        {props.data.map((val, i) => {
+          return (
+            <div
+              id={`${i}`}
+              style={{ color: i === 3 && "#FFD462" }}
+              onClick={(e) => onSelect(e)}
+              onMouseEnter={(e) => onHighlight(e)}
+              onMouseLeave={(e) => offHighlight(e)}
+            >
+              {val.date}
+            </div>
+          );
+        })}
+      </div> */}
     </div>
   );
 };
