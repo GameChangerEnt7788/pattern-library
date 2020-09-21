@@ -869,7 +869,6 @@ export const Paging = (props) => {
       <div style={{ marginTop: "40px", fontSize: "14px" }}>
         <div>Page: {Number(page) + 1}</div>
         <div>numberOfPages: {numberOfPages}</div>
-        <div>startPage: {startPage + 1}</div>
       </div>
     </div>
   );
