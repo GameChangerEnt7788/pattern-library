@@ -687,13 +687,6 @@ export const RatingsChart = (props) => {
   // const [element, buttonGlow] = useState(false);
   const [element, dateSelect] = useState(3);
 
-  const onHighlight = (e) => {
-    element !== e.target.id &&
-      document
-        .getElementById(e.target.id)
-        .style.setProperty("color", "#F8F8FF");
-  };
-
   return (
     <div
       className="statsTicker-container"
@@ -719,6 +712,165 @@ export const RatingsChart = (props) => {
           </div>
         );
       })}
+    </div>
+  );
+};
+/*
+export const Paging = (props) => {
+  // const [element, buttonGlow] = useState(false);
+  const [page, pageSelect] = useState(1);
+
+  const records = 212;
+  const perPage = 10;
+  const numberOfPages = Math.ceil(records / perPage);
+  var pages = [];
+  let startPage;
+  if (page > 3) {
+    startPage = page - 3;
+  } else if (page === 1 || page === 2 || page === 3 || page === 4) {
+    startPage = 1;
+  } else {
+    startPage = page;
+  }
+  if (page === numberOfPages) {
+    startPage = numberOfPages - 7;
+  } else if (page === numberOfPages - 1) {
+    startPage = numberOfPages - 7;
+  } else if (page === numberOfPages - 2) {
+    startPage = numberOfPages - 7;
+  } else if (page === numberOfPages - 3) {
+    startPage = numberOfPages - 7;
+  } else if (page === numberOfPages - 4) {
+    startPage = numberOfPages - 7;
+  } else {
+    if (startPage > 3) {
+      startPage = page - 3;
+    }
+  }
+
+  if (page > 5) {
+    pages.push(<div className="cursor">1</div>);
+    pages.push(<div className="cursor">...</div>);
+  }
+  if (page === 5) {
+    pages.push(<div className="cursor">1</div>);
+  }
+
+  for (var i = startPage; i < numberOfPages; i++) {
+    let j = i;
+    // note: we add a key prop here to allow react to uniquely identify each
+    // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
+
+    pages.push(
+      <div className="cursor" onClick={() => pageSelect(j)}>
+        {i}
+      </div>
+    );
+    if (i > startPage + 5) {
+      if (startPage < numberOfPages - 7) {
+        pages.push(<div className="cursor">...</div>);
+      }
+      pages.push(
+        <div className="cursor" onClick={() => pageSelect(numberOfPages)}>
+          {numberOfPages}
+        </div>
+      );
+      break;
+    }
+  }
+
+
+  return (
+    <div
+      className="statsTicker-container"
+      style={
+        {
+     width: "100px"
+        }
+      }
+    >
+      <div
+        className="pagingGrid"
+        style={{
+          gridTemplateColumns: `repeat(${pages.length}, 25px)`,
+          gridGap: "5px",
+        }}
+      >
+        {pages}
+      </div>
+      <div>Page: {page}</div>
+      <div>numberOfPages: {numberOfPages}</div>
+      <div>startPage: {startPage}</div>
+
+
+    </div>
+  );
+}; */
+
+export const Paging = (props) => {
+  // const [element, buttonGlow] = useState(false);
+  const [page, pageSelect] = useState(0);
+  const records = props.records;
+  const perPage = props.perPage;
+  const numberOfPages = Math.ceil(records / perPage);
+  var pages = [];
+  let startPage = 0;
+
+  const onHighlight = (e) => {
+    pageSelect(e.target.id);
+
+    for (var i = 0; i < numberOfPages; i++) {
+      document.getElementById(i).className = "cursor pageNumber";
+    }
+    e.target.className = "cursor pageHighlight";
+    props.returnPage(Number(e.target.id) + 1);
+    // document.getElementById(e.target.id).style.setProperty("color", "#F8F8FF");
+  };
+
+  for (var i = startPage; i < numberOfPages; i++) {
+    let j = i;
+    pages.push(
+      <div
+        className={`cursor ${j === 0 ? "pageHighlight" : "pageNumber"}`}
+        id={j}
+        onClick={(e) => onHighlight(e)}
+      >
+        {i + 1}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="statsTicker-container"
+      style={
+        {
+          /* width: props.fullwidth ? "100%" : props.width */
+        }
+      }
+    >
+      <div className="pagingGridContainer">
+        <div
+          className="pagingGrid"
+          style={{
+            gridTemplateColumns: `repeat(${pages.length}, 30px)`,
+            gridGap: "15px",
+            left:
+              page > 2 && page < numberOfPages - 3
+                ? page * -45 + 90
+                : page >= numberOfPages - 3
+                ? (numberOfPages - 5) * -45
+                : 0,
+          }}
+        >
+          {pages}
+        </div>
+      </div>
+      <div style={{ marginTop: "40px", fontSize: "14px" }}>
+        <div>Page: {Number(page) + 1}</div>
+        <div>numberOfPages: {numberOfPages}</div>
+        <div>startPage: {startPage + 1}</div>
+      </div>
     </div>
   );
 };

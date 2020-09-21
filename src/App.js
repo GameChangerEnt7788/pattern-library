@@ -28,6 +28,7 @@ import {
   PatternModalMain,
   PatternStatsTicker,
   PatternRatingsChart,
+  PatternPaging,
 } from "./pattern/elementComponents";
 
 import { PatternTabbedSections } from "./pattern/sectionComponents";
@@ -57,6 +58,7 @@ const componentList = [
         { ModalMain: <PatternModalMain /> },
         { StatsTicker: <PatternStatsTicker /> },
         { RatingsChart: <PatternRatingsChart /> },
+        { Paging: <PatternPaging /> },
       ],
     },
   },
@@ -122,7 +124,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternTabbedSections />,
+    selectedComponent: <PatternPaging />,
     page: "components",
   };
   sendSearch = () => {

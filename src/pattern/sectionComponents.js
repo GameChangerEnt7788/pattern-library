@@ -2,6 +2,7 @@ import React from "react";
 import { CodeBlock, vs2015 } from "react-code-blocks";
 import { TabbedSections } from "./sections/sections";
 import SlideShow from "./elements/SlideShow";
+import { RatingsChart } from "./elements/elements";
 /* import { Button } from "./forms/Button";
 import SlideShow from "./elements/SlideShow";
 import { ModalMain } from "./ModalMain";
@@ -9,6 +10,7 @@ import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; */
 
 export const PatternTabbedSections = (props) => {
+  const ratingsData = [68, 12, 10, 6, 4];
   const slideData = [
     {
       image: "images/produc1.jpg",
@@ -19,7 +21,10 @@ export const PatternTabbedSections = (props) => {
   ];
   const data = [
     { title: "Details", content: <SlideShow data={slideData} /> },
-    { title: "Reviews", content: "Text, JSX or Components" },
+    {
+      title: "Reviews",
+      content: <RatingsChart data={ratingsData} fullwidth />,
+    },
     {
       title: "Discussions",
       content:

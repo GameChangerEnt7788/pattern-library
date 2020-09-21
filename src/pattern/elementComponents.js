@@ -12,6 +12,7 @@ import {
   SlidePanel,
   StatsTicker,
   RatingsChart,
+  Paging,
 } from "./elements/elements";
 import { Button } from "./forms/Button";
 import SlideShow from "./elements/SlideShow";
@@ -1236,6 +1237,76 @@ export const PatternRatingsChart = (props) => {
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
           {`<`}RatingsChart{`/>`}
+        </h3>
+        <div /* style={patternListTable} */>
+          {patternListTable.map((val, i) => {
+            return (
+              <>
+                <div className="patternListStyle">
+                  <span id="pattern-name">{val.param}</span>
+                  <span id="pattern-parameter">{val.type}</span>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginBottom: "30px" }}>
+        <h3 style={{ textDecoration: "underline" }}>Code</h3>
+        <CodeBlock
+          text={code}
+          language={"jsx"}
+          showLineNumbers={false}
+          wrapLines={false}
+          theme={vs2015}
+        />
+      </div>
+    </>
+  );
+};
+
+export const PatternPaging = (props) => {
+  const returnPage = (page) => {
+    console.log(page);
+  };
+
+  const patternListTable = [
+    {
+      param: "records",
+      type: "Integer (total records)",
+    },
+    { param: "perPage", type: "Integer (records per page)" },
+    {
+      param: "returnPage",
+      type: "Function (returns page number for retrieving page content)",
+    },
+  ];
+
+  const code = `<Paging
+  records={167}
+  perPage={10}
+  returnPage={returnPage}
+  />`;
+  return (
+    <>
+      <div
+        className="raisedCard"
+        style={{
+          width: "auto",
+          height: "auto",
+          padding: "30px",
+          position: "relative",
+        }}
+      >
+        <div>
+          <Paging records={167} perPage={10} returnPage={returnPage} />
+        </div>
+      </div>
+
+      <div className="card" style={{ margin: "30px 0 30px 0" }}>
+        <h3 style={{ textDecoration: "underline" }}>
+          {`<`}Paging{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {
