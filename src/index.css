@@ -1307,3 +1307,52 @@ box-shadow: 1px 1px 0 0 rgba(255,255,255,0.67), inset 2px 2px 1px 0 rgba(0,0,0,0
 .pageNumber:hover {
   font-weight: 700;
 }
+
+/* ITEMS */
+
+/* Root item */
+.root-item-container {
+  display: flex;
+  color: #f8f8ff;
+}
+.root-item-image {
+  width: 30%;
+  margin-right: 10px;
+}
+.root-item-image img {
+  display: block;
+  width: 100%;
+  min-width: 80px;
+  height: 100%;
+  object-fit: cover;
+}
+.root-item-content {
+}
+.root-item-title {
+  font-weight: 600;
+}
+
+.root-item-subtitle {
+  font-size: 13px;
+  margin: 5px 0 5px 0;
+
+  width: 100%;
+}
+.root-item-description {
+  color: #a9a9a9;
+  font-size: 12px;
+  font-style: italic;
+
+  width: 100%;
+}
+.root-item-price {
+  font-size: 30px;
+}
+.item-controls {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: min-content min-content min-content;
+  grid-gap: 15px;
+
+  width: 100%;
+}

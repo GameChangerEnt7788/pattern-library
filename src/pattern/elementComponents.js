@@ -1156,7 +1156,7 @@ export const PatternStatsTicker = (props) => {
       <div
         className="primaryBackground"
         style={{
-          width: "50%",
+          width: "80%",
           height: "auto",
           padding: "80px",
           position: "relative",

@@ -32,7 +32,7 @@ import {
 } from "./pattern/elementComponents";
 
 import { PatternTabbedSections } from "./pattern/sectionComponents";
-
+import { PatternRootItem } from "./pattern/itemComponents";
 import { Pallette, Panels, Titles } from "./pattern/colors";
 import { Fonts, Scale } from "./pattern/type";
 
@@ -88,6 +88,12 @@ const componentList = [
       components: [{ TabbedSections: <PatternTabbedSections /> }],
     },
   },
+  {
+    type: {
+      name: "Items",
+      components: [{ RootItem: <PatternRootItem /> }],
+    },
+  },
 ];
 
 const foundationsList = [
@@ -124,7 +130,7 @@ const foundationsList = [
 
 class App extends Component {
   state = {
-    selectedComponent: <PatternPaging />,
+    selectedComponent: <PatternRootItem />,
     page: "components",
   };
   sendSearch = () => {
