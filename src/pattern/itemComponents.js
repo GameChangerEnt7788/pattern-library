@@ -11,6 +11,7 @@ export const PatternRootItem = (props) => {
   const patternListTable = [
     { param: "data", type: "Object (see code example)" },
     { param: "fullwidth", type: "Boolean" },
+    { param: "mode", type: "String ('dark' or 'light')" },
     { param: "width", type: "Integer" },
   ];
   const data = {
@@ -20,9 +21,11 @@ export const PatternRootItem = (props) => {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore…",
     comments: 36332,
-    likes: 72353,
+    likes: 34534,
     views: 2524,
     price: 43,
+    reviews: 34,
+    reviewPercent: 89,
     share: false,
   };
 
@@ -31,16 +34,19 @@ export const PatternRootItem = (props) => {
     image: "images/produc1.jpg", // false for none
     title: "The Biggest Fan", // false for none
     subtitle: "“Season 1 - Episode 4”", // false for none
-    description: "Lorem ipsum dolor...", // false for none
+    description: "Lorem ipsum dolor sit...", // false for none
     comments: 36332, // false for none
-    likes: 72353, // false for none
+    likes: 34534, // false for none
     views: 2524, // false for none
     price: 43, // false for none
-    share: false, // false for none
+    reviews: 34, // false for none
+    reviewPercent: 89, // if reviews != false
+    share: false,  // false for none
   };
 
   <RootItem
   data={data}
+  mode="dark"
   fullwidth
   />`;
   return (
@@ -56,15 +62,28 @@ export const PatternRootItem = (props) => {
         }}
       >
         <div>
-          <RootItem data={data} fullwidth />
+          <RootItem data={data} mode="dark" fullwidth />
         </div>
       </div>
-
+      <div
+        className="solidWhitePanel"
+        style={{
+          width: "100%",
+          height: "auto",
+          padding: "20px",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
+        <div>
+          <RootItem data={data} mode="light" fullwidth />
+        </div>
+      </div>
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
           {`<`}RootItem{`/>`}
         </h3>
-        <div /* style={patternListTable} */>
+        <div>
           {patternListTable.map((val, i) => {
             return (
               <>

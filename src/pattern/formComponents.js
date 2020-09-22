@@ -523,7 +523,7 @@ export const PatternTextButton = (props) => {
 
       <div className="card" style={{ margin: "30px 0 30px 0" }}>
         <h3 style={{ textDecoration: "underline" }}>
-          {`<`}Secondary Button{`/>`}
+          {`<`}TextButton{`/>`}
         </h3>
         <div /* style={patternListTable} */>
           {patternListTable.map((val, i) => {

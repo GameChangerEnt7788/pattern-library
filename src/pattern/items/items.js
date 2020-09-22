@@ -11,6 +11,8 @@ import {
   HeartButton,
 } from "../forms/Button";
 import { Select } from "../forms/Fields";
+import { StarRating } from "../elements/elements";
+
 import gsap from "gsap";
 export const RootItem = (props) => {
   return (
@@ -19,9 +21,15 @@ export const RootItem = (props) => {
         width: props.fullwidth ? "100%" : props.width,
       }}
     >
-      <div className="root-item-container">
+      <div
+        className="root-item-container"
+        style={{ color: props.mode === "dark" ? "#f8f8ff" : "#241C15" }}
+      >
         {props.data.image ? (
-          <div className="root-item-image">
+          <div
+            className="root-item-image"
+            style={{ width: props.fullwidth ? "100%" : props.width }}
+          >
             <img src={props.data.image} />
           </div>
         ) : null}
@@ -33,8 +41,28 @@ export const RootItem = (props) => {
             <div className="root-item-subtitle">{props.data.subtitle}</div>
           ) : null}
           {props.data.description ? (
-            <div className="root-item-description">
+            <div
+              style={{ color: props.mode === "dark" ? "#a9a9a9" : "#808080" }}
+              className="root-item-description"
+            >
               {props.data.description}
+            </div>
+          ) : null}
+          {props.data.reviews ? (
+            <div
+              style={{
+                marginTop: "10px",
+                color: props.mode === "dark" ? "#a9a9a9" : "#808080",
+              }}
+              className="root-item-description"
+            >
+              <StarRating
+                size={15}
+                onColor="#FFBE36"
+                offColor="#5B5B5B"
+                percent={props.data.reviewPercent}
+              />
+              {props.data.reviews} reviews
             </div>
           ) : null}
           {props.data.price ? (
@@ -50,8 +78,8 @@ export const RootItem = (props) => {
                     onClick={() => console.log("clicked")}
                     size={14}
                     commentCount={props.data.comments}
-                    color="#D8D8D8"
-                    textColor="#FFD462"
+                    color={props.mode === "dark" ? "#D8D8D8" : "#A9A9A9"}
+                    textColor={props.mode === "dark" ? "#FFD462" : "#808080"}
                   />
                 </div>
               ) : null}
@@ -61,8 +89,8 @@ export const RootItem = (props) => {
                     onClick={() => console.log("clicked")}
                     on={false}
                     size={14}
-                    color="#D8D8D8"
-                    textColor="#FFD462"
+                    color={props.mode === "dark" ? "#D8D8D8" : "#A9A9A9"}
+                    textColor={props.mode === "dark" ? "#FFD462" : "#808080"}
                     likeCount={props.data.likes}
                   />
                 </div>
@@ -71,8 +99,8 @@ export const RootItem = (props) => {
                 <div>
                   <ViewCount
                     size={14}
-                    color="#D8D8D8"
-                    textColor="#FFD462"
+                    color={props.mode === "dark" ? "#D8D8D8" : "#A9A9A9"}
+                    textColor={props.mode === "dark" ? "#FFD462" : "#808080"}
                     viewCount={props.data.views}
                   />
                 </div>
@@ -82,8 +110,8 @@ export const RootItem = (props) => {
                   <ShareButton
                     onClick={() => console.log("clicked")}
                     size={14}
-                    color="#D8D8D8"
-                    textColor="#FFD462"
+                    color={props.mode === "dark" ? "#D8D8D8" : "#A9A9A9"}
+                    textColor={props.mode === "dark" ? "#FFD462" : "#808080"}
                   />
                 </div>
               ) : null}
